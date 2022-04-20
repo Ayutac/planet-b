@@ -41,7 +41,6 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
 	modApi ("TechReborn:TechReborn-${project.techreborn_version}") { exclude group: "net.fabricmc.fabric-api" }
 }
 

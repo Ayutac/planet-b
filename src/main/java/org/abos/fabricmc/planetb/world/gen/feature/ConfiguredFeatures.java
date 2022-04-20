@@ -7,6 +7,7 @@ import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.OreConfiguredFeatures;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import org.abos.fabricmc.planetb.Content;
 import org.abos.fabricmc.planetb.PlanetB;
@@ -16,9 +17,9 @@ public class ConfiguredFeatures {
     public static final String PLANET_MOON_ROCK_ORE_STR = "planet_moon_rock_ore";
     public static final ConfiguredFeature<?,?> PLANET_MOON_ROCK_ORE = new ConfiguredFeature<>
         (Feature.ORE, new OreFeatureConfig(
-                new BlockMatchRuleTest(Blocks.BLACKSTONE),
+                OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                 Content.MOON_ROCK.getDefaultState(),
-                9
+                30
             ));
 
     public static void init() {

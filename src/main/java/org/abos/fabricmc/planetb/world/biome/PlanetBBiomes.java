@@ -1,6 +1,7 @@
 package org.abos.fabricmc.planetb.world.biome;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -13,9 +14,10 @@ public class PlanetBBiomes {
 
     public static void loadBiomes() {
         Registry.register(BuiltinRegistries.BIOME, PlanetBBiomeRegister.PLAINS_KEY.getValue(), PlanetBCreateBiome.PLAINS);
-        BiomeModifications.addFeature(PlanetBBiomeRegister.SELECT_PLANET_B_BIOMES,
-                GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(PlanetB.MOD_ID, ConfiguredFeatures.PLANET_MOON_ROCK_ORE_STR)));
+        BiomeModifications.create(new Identifier(PlanetB.MOD_ID, PlanetB.MOD_ID))
+            .add(ModificationPhase.REPLACEMENTS, PlanetBBiomeRegister.SELECT_PLANET_B_BIOMES,
+                context -> context.getGenerationSettings().addFeature(GenerationStep.Feature.UNDERGROUND_ORES,
+                        RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(PlanetB.MOD_ID, ConfiguredFeatures.PLANET_MOON_ROCK_ORE_STR))));
     }
 
     public static void init() {

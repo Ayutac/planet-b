@@ -24,6 +24,8 @@ import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.dimension.DimensionType;
+import org.abos.fabricmc.planetb.world.biome.PlanetBBiomes;
+import org.abos.fabricmc.planetb.world.dimension.PlanetBDimension;
 import org.abos.fabricmc.planetb.worldgen.ConfiguredFeatures;
 import org.abos.fabricmc.planetb.worldgen.PlacedFeatures;
 import org.slf4j.Logger;
@@ -35,30 +37,21 @@ public class PlanetB implements ModInitializer {
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	public static final RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(
-			Registry.DIMENSION_KEY,
-			new Identifier(MOD_ID, MOD_ID)
-	);
-
-	public static final RegistryKey<World> WORLD_KEY = RegistryKey.of(
-			Registry.WORLD_KEY,
-			DIMENSION_KEY.getValue()
-	);
-
-	public static final RegistryKey<DimensionType> DIMENSION_TYPE_KEY = RegistryKey.of(
-			Registry.DIMENSION_TYPE_KEY,
-			new Identifier(MOD_ID, MOD_ID + "_type")
-	);
-
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Initializing...");
+
 		Content.init();
-		ConfiguredFeatures.init();
-		PlacedFeatures.init();
+		PlanetBBiomes.init();
+		//ConfiguredFeatures.init();
+		//PlacedFeatures.init();
+		PlanetBDimension.init();
+
+		PlanetBBiomes.loadBiomes();
+
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
 			ServerWorld overworld = server.getWorld(World.OVERWORLD);
-			ServerWorld world = server.getWorld(WORLD_KEY);
+			ServerWorld world = server.getWorld(PlanetBDimension.WORLD_KEY);
 
 			if (world == null)
 				throw new AssertionError("Planet B world doesn't exist.");
@@ -75,7 +68,7 @@ public class PlanetB implements ModInitializer {
 			if (teleported == null)
 				throw new AssertionError("Entity didn't teleport");
 
-			if (!teleported.world.getRegistryKey().equals(WORLD_KEY))
+			if (!teleported.world.getRegistryKey().equals(PlanetBDimension.WORLD_KEY))
 				throw new AssertionError("Target world not reached.");
 
 			if (!teleported.getPos().equals(target.position))
@@ -114,7 +107,7 @@ public class PlanetB implements ModInitializer {
 	}
 
 	private ServerWorld getModWorld(CommandContext<ServerCommandSource> context) {
-		return getWorld(context, WORLD_KEY);
+		return getWorld(context, PlanetBDimension.WORLD_KEY);
 	}
 
 	private ServerWorld getWorld(CommandContext<ServerCommandSource> context, RegistryKey<World> dimensionRegistryKey) {

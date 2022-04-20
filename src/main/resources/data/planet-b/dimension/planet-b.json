@@ -2,10 +2,24 @@
   "type": "planet-b:planet-b_type",
   "generator": {
     "type": "minecraft:noise",
+    "seed": 0,
     "settings": "minecraft:overworld",
     "biome_source": {
       "type": "minecraft:multi_noise",
-      "preset": "minecraft:overworld"
+      "biomes": [
+        {
+          "biome": "planet-b:plains",
+          "parameters": {
+            "temperature": 0.3,
+            "humidity": 0.3,
+            "continentalness": 0.8,
+            "erosion": 0.05,
+            "weirdness": 0.3,
+            "depth": 0.7,
+            "offset": 0
+          }
+        }
+      ]
     }
   }
 }

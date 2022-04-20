@@ -8,22 +8,27 @@ import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
+import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 import org.abos.fabricmc.planetb.PlanetB;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
 
 public class PlacedFeatures {
 
-    public final static PlacedFeature PLANET_MOON_ROCK_ORE = new PlacedFeature(
-            RegistryEntry.of(ConfiguredFeatures.PLANET_MOON_ROCK_ORE),
-            Arrays.asList(
-                    CountPlacementModifier.of(20),
-                    SquarePlacementModifier.of(),
-                    HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(64))));
+    public static List<PlacementModifier> createOrePlacementModifiers() {
+        return Arrays.asList(
+                CountPlacementModifier.of(20),
+                HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(64)));
+    }
 
     public static void init() {
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, ConfiguredFeatures.PLANET_MOON_ROCK_ORE_STR), PLANET_MOON_ROCK_ORE);
+        for (ConfiguredFeatures.Ore ore : ConfiguredFeatures.Ore.values()) {
+            Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, ore.getFullName()),
+                    new PlacedFeature(RegistryEntry.of(ore.asFeature()), createOrePlacementModifiers()));
+        }
     }
 
     private PlacedFeatures() {/* No instantiation. */}

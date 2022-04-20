@@ -22,6 +22,8 @@ import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
 import org.abos.fabricmc.planetb.world.biome.PlanetBBiomes;
 import org.abos.fabricmc.planetb.world.dimension.PlanetBDimension;
+import org.abos.fabricmc.planetb.world.gen.feature.ConfiguredFeatures;
+import org.abos.fabricmc.planetb.world.gen.feature.PlacedFeatures;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,9 +38,9 @@ public class PlanetB implements ModInitializer {
 		LOGGER.info("Initializing...");
 
 		Content.init();
+		ConfiguredFeatures.init();
+		PlacedFeatures.init();
 		PlanetBBiomes.init();
-		//ConfiguredFeatures.init();
-		//PlacedFeatures.init();
 		PlanetBDimension.init();
 
 		PlanetBBiomes.loadBiomes();

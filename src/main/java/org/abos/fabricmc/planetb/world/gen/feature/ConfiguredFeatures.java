@@ -1,4 +1,4 @@
-package org.abos.fabricmc.planetb.worldgen;
+package org.abos.fabricmc.planetb.world.gen.feature;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.structure.rule.BlockMatchRuleTest;

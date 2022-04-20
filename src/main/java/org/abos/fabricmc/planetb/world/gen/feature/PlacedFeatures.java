@@ -1,4 +1,4 @@
-package org.abos.fabricmc.planetb.worldgen;
+package org.abos.fabricmc.planetb.world.gen.feature;
 
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;

@@ -1,26 +1,29 @@
 package org.abos.fabricmc.planetb.world.biome;
 
-import net.fabricmc.fabric.api.biome.v1.BiomeModification;
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
+import net.fabricmc.fabric.api.biome.v1.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.GenerationStep;
 import org.abos.fabricmc.planetb.PlanetB;
-import org.abos.fabricmc.planetb.world.gen.feature.ConfiguredFeatures;
+import org.abos.fabricmc.planetb.world.gen.feature.OreFeatures;
+
+import java.util.function.BiConsumer;
 
 public class PlanetBBiomes {
 
     public static void loadBiomes() {
         Registry.register(BuiltinRegistries.BIOME, PlanetBBiomeRegister.PLAINS_KEY.getValue(), PlanetBCreateBiome.PLAINS);
-        BiomeModification ores = BiomeModifications.create(new Identifier(PlanetB.MOD_ID, PlanetB.MOD_ID));
-        for (ConfiguredFeatures.Ore ore : ConfiguredFeatures.Ore.values()) {
-            ores.add(ModificationPhase.REPLACEMENTS, PlanetBBiomeRegister.SELECT_PLANET_B_BIOMES,
-                context -> context.getGenerationSettings().addFeature(GenerationStep.Feature.UNDERGROUND_ORES,
-                        RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(PlanetB.MOD_ID, ore.getFullName()))));
-        }
+        BiomeModifications.create(new Identifier(PlanetB.MOD_ID, "features"))
+                .add(ModificationPhase.ADDITIONS, PlanetBBiomeRegister.SELECT_PLANET_B_BIOMES, oreModifier());
+    }
+
+    private static BiConsumer<BiomeSelectionContext, BiomeModificationContext> oreModifier() {
+        return (biomeSelectionContext, biomeModificationContext) -> {
+            for (OreFeatures.Ore ore : OreFeatures.Ore.values()) {
+                biomeModificationContext.getGenerationSettings().addFeature(GenerationStep.Feature.UNDERGROUND_ORES, ore.getPlacedFeatureRegistryKey());
+            }
+        };
     }
 
     public static void init() {

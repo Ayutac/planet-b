@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "org.abos.fabricmc.planetb.PlanetB"
+    ],
+    "terrablender": [
+      "org.abos.fabricmc.planetb.PlanetB"
     ]
   },
   "mixins": [

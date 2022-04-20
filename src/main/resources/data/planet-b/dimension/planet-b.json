@@ -12,7 +12,7 @@
           "parameters": {
             "temperature": 0.3,
             "humidity": 0.3,
-            "continentalness": 0.8,
+            "continentalness": 1,
             "erosion": 0.05,
             "weirdness": 0.3,
             "depth": 0.7,

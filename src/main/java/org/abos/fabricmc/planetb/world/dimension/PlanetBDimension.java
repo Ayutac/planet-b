@@ -28,4 +28,6 @@ public class PlanetBDimension {
     public static void init() {
         PlanetB.LOGGER.info("Registering dimension for + " + PlanetB.MOD_ID);
     }
+
+    private PlanetBDimension() {/* No instantiation. */}
 }

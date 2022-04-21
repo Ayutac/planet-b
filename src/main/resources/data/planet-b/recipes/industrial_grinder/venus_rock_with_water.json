@@ -1,0 +1,25 @@
+{
+	"type": "techreborn:industrial_grinder",
+	"power": 64,
+	"time": 100,
+	"tank": {
+		"fluid": "minecraft:water",
+		"amount": 1000
+	},
+	"ingredients": [
+		{
+			"tag": "c:venus_rocks"
+		}
+	],
+	"results": [
+		{
+			"item": "planet-b:venus_dust"
+		},
+		{
+			"item": "techreborn:basalt_dust"
+		},
+		{
+			"item": "techreborn:pyrite_small_dust"
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+	"recipes": [
+	  "techreborn:industrial_grinder/neptune_rock_with_water"
+	]
+  },
+  "criteria": {
+	"has_neptune_rock": {
+	  "trigger": "minecraft:inventory_changed",
+	  "conditions": {
+		"items": [
+		  {
+			"tag": "c:neptune_rocks"
+		  }
+		]
+	  }
+	},
+	"has_the_recipe": {
+	  "trigger": "minecraft:recipe_unlocked",
+	  "conditions": {
+		"recipe": "techreborn:industrial_grinder/neptune_rock_with_water"
+	  }
+	}
+  },
+  "requirements": [
+	[
+	  "has_neptune_rock",
+	  "has_the_recipe"
+	]
+  ]
+}

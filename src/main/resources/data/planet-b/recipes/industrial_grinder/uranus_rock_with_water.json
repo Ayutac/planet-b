@@ -1,0 +1,22 @@
+{
+	"type": "techreborn:industrial_grinder",
+	"power": 64,
+	"time": 100,
+	"tank": {
+		"fluid": "minecraft:water",
+		"amount": 2000
+	},
+	"ingredients": [
+		{
+			"tag": "c:uranus_rocks"
+		}
+	],
+	"results": [
+		{
+			"item": "planet-b:uranus_dust"
+		},
+		{
+			"item": "minecraft:packed_ice"
+		}
+	]
+}

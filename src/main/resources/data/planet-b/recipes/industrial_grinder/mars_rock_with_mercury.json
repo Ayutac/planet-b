@@ -1,0 +1,31 @@
+{
+	"type": "techreborn:industrial_grinder",
+	"power": 64,
+	"time": 100,
+	"tank": {
+		"fluid": "minecraft:mercury",
+		"amount": 1000
+	},
+	"ingredients": [
+		{
+			"tag": "c:mars_rocks"
+		}
+	],
+	"results": [
+		{
+			"item": "planet-b:mars_dust"
+		},
+		{
+			"item": "techreborn:calcite_dust",
+			"count": 2
+		},
+		{
+			"item": "techreborn:titanium_small_dust",
+			"count": 2
+		},
+		{
+			"item": "techreborn:sulfur_small_dust",
+			"count": 2
+		}
+	]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:smithing/portal_frame"
+    ]
+  },
+  "criteria": {
+    "has_advanced_casing": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "techreborn:advanced_machine_casing"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:smithing/portal_frame"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_advanced_casing",
+      "has_the_recipe"
+    ]
+  ]
+}

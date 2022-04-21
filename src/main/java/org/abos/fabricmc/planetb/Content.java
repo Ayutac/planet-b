@@ -25,10 +25,10 @@ public class Content {
         MARS(MapColor.TERRACOTTA_ORANGE),
         MERCURY(MapColor.GOLD),
         MOON(MapColor.WHITE),
-        NEPTUNE(MapColor.CYAN),
+        NEPTUNE(MapColor.TERRACOTTA_CYAN),
         PLUTO(MapColor.TERRACOTTA_BLUE),
         SATURN(MapColor.ORANGE),
-        URANUS(MapColor.TERRACOTTA_PURPLE),
+        URANUS(MapColor.CYAN),
         VENUS(MapColor.RED);
 
         private Block block;

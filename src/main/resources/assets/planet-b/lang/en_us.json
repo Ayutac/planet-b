@@ -1,0 +1,43 @@
+{
+  "block.planet-b.portal_frame": "Reinforced Machine Casing",
+  "item.planet-b.portal_frame": "Reinforced Machine Casing",
+
+  "block.planet-b.jupiter_rock": "Jupiter Rock",
+  "item.planet-b.jupiter_rock": "Jupiter Rock",
+  "item.planet-b.jupiter_dust": "Jupiter Dust",
+  "block.planet-b.mars_rock": "Mars Rock",
+  "item.planet-b.mars_rock": "Mars Rock",
+  "item.planet-b.mars_dust": "Mars Dust",
+  "block.planet-b.mercury_rock": "Mercury Rock",
+  "item.planet-b.mercury_rock": "Mercury Rock",
+  "item.planet-b.mercury_dust": "Mercury Dust",
+  "block.planet-b.moon_rock": "Moon Rock",
+  "item.planet-b.moon_rock": "Moon Rock",
+  "item.planet-b.moon_dust": "Moon Dust",
+  "block.planet-b.neptune_rock": "Neptune Rock",
+  "item.planet-b.neptune_rock": "Neptune Rock",
+  "item.planet-b.neptune_dust": "Neptune Dust",
+  "block.planet-b.pluto_rock": "pluto Rock",
+  "item.planet-b.pluto_rock": "Pluto Rock",
+  "item.planet-b.pluto_dust": "Pluto Dust",
+  "block.planet-b.saturn_rock": "Saturn Rock",
+  "item.planet-b.saturn_rock": "Saturn Rock",
+  "item.planet-b.saturn_dust": "Saturn Dust",
+  "block.planet-b.uranus_rock": "Uranus Rock",
+  "item.planet-b.uranus_rock": "Uranus Rock",
+  "item.planet-b.uranus_dust": "Uranus Dust",
+  "block.planet-b.venus_rock": "Venus Rock",
+  "item.planet-b.venus_rock": "Venus Rock",
+  "item.planet-b.venus_dust": "Venus Dust",
+
+  "itemGroup.planet-b.planet-b": "Planet B",
+
+  "biome.planet-b.plains": "Plains (Planet B)",
+
+  "advancements.planet-b.portal_frame": "Portal away!",
+  "advancements.planet-b.portal_frame.desc": "Obtain a portal frame for Planet B",
+  "advancements.planet-b.any_rock": "Space rocks!",
+  "advancements.planet-b.any_rock.desc": "Obtain any space rock",
+  "advancements.planet-b.all_rocks": "Rock Collector",
+  "advancements.planet-b.all_rocks.desc": "Obtain all space rocks"
+}

@@ -1,0 +1,27 @@
+{
+  "type": "techreborn:centrifuge",
+  "power": 10,
+  "time": 2500,
+  "ingredients": [
+    {
+      "item": "planet-b:venus_dust",
+      "count": 8
+    }
+  ],
+  "results": [
+    {
+      "item": "techreborn:basalt_dust",
+      "count": 4
+    },
+    {
+      "item": "techreborn:pyrite_dust",
+      "count": 2
+    },
+    {
+      "item": "minecraft:raw_iron"
+    },
+    {
+      "item": "techreborn:cinnabar_dust"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "techreborn:industrial_electrolyzer",
+  "power": 50,
+  "time": 500,
+  "ingredients": [
+    {
+      "item": "planet-b:saturn_dust",
+      "count": 2
+    },
+    {
+      "item": "techreborn:cell",
+      "count": 2,
+      "nbt": "null"
+    }
+  ],
+  "results": [
+    {
+      "item": "techreborn:cell",
+      "nbt": {
+        "fluid": "techreborn:hydrogen"
+      }
+    },
+    {
+      "item": "techreborn:cell",
+      "nbt": {
+        "fluid": "techreborn:helium"
+      }
+    }
+  ]
+}

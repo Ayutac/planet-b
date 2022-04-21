@@ -1,0 +1,39 @@
+{
+  "type": "techreborn:industrial_electrolyzer",
+  "power": 50,
+  "time": 1100,
+  "ingredients": [
+    {
+      "item": "planet-b:jupiter_dust",
+      "count": 8
+    },
+    {
+      "item": "techreborn:cell",
+      "count": 4,
+      "nbt": "null"
+    }
+  ],
+  "results": [
+    {
+      "item": "techreborn:cell",
+      "nbt": {
+        "fluid": "techreborn:hydrogen"
+      },
+      "count": 2
+    },
+    {
+      "item": "techreborn:cell",
+      "nbt": {
+        "fluid": "techreborn:helium"
+      },
+      "count": 2
+    },
+    {
+      "item": "techreborn:uvarovite_dust",
+      "count": 3
+    },
+    {
+      "item": "techreborn:emerald_dust"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "type": "techreborn:centrifuge",
+  "power": 20,
+  "time": 2000,
+  "ingredients": [
+    {
+      "item": "planet-b:pluto_dust",
+      "count": 2
+    }
+  ],
+  "results": [
+    {
+      "item": "techreborn:platinum_dust"
+    },
+    {
+      "item": "techreborn:iridium_nugget",
+      "count": 3
+    },
+    {
+      "item": "techreborn:tungsten_nugget"
+    },
+    {
+      "item": "techreborn:diamond_small_dust"
+    }
+  ]
+}

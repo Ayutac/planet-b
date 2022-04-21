@@ -1,5 +1,6 @@
 package org.abos.fabricmc.planetb;
 
+import com.google.common.collect.ImmutableMap;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -10,8 +11,10 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import org.abos.fabricmc.planetb.world.gen.feature.OreFeatures;
 
 import java.util.Locale;
+import java.util.Map;
 
 public class Content {
 
@@ -44,6 +47,38 @@ public class Content {
         @Override
         public Item asItem() {
             return item;
+        }
+    }
+
+    public enum Dust implements ItemConvertible {
+        JUPITER,
+        MARS,
+        MERCURY,
+        MOON,
+        NEPTUNE,
+        PLUTO,
+        SATURN,
+        URANUS,
+        VENUS;
+
+        private Item item;
+
+        Dust() {
+            item = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+            Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name().toLowerCase(Locale.ROOT) + "dust"), item);
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+
+        public static Map<Rock, Dust> getRock2DustMap() {
+            var builder = new ImmutableMap.Builder<Rock, Dust>();
+            for (Dust dust : Dust.values()) {
+                builder.put(Rock.valueOf(dust.name()), dust);
+            }
+            return builder.build();
         }
     }
 

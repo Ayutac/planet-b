@@ -1,19 +1,20 @@
 package org.abos.fabricmc.planetb;
 
 import com.google.common.collect.ImmutableMap;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.registry.Registry;
 import reborncore.common.misc.TagConvertible;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -21,6 +22,9 @@ public class Content {
 
     public static final String PORTAL_FRAME_STR = "portal_frame";
     public static final Block PORTAL_FRAME = new Block(FabricBlockSettings.of(Material.METAL, MapColor.GRAY).strength(10f, 100f).sounds(BlockSoundGroup.NETHERITE));
+    private static Item PORTAL_FRAME_ITEM;
+
+    private static ItemGroup ITEM_GROUP = null;
 
     public enum Rock implements ItemConvertible, TagConvertible<Item> {
         JUPITER(MapColor.TERRACOTTA_GREEN),
@@ -100,22 +104,36 @@ public class Content {
     }
 
     public static void init() {
+        PlanetB.LOGGER.info("Initializing items...");
         initBlocks();
+        getItemGroup(); // ensures enum loading
     }
 
     public static BlockItem registerBlock(String name, Block block) {
         Registry.register(Registry.BLOCK, new Identifier(PlanetB.MOD_ID, name), block);
-        BlockItem item = new BlockItem(block, new FabricItemSettings().group(ItemGroup.MISC));
+        BlockItem item = new BlockItem(block, new FabricItemSettings());
         Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name), item);
         return item;
     }
 
-    public static void initBlocks() {
-        registerBlock(PORTAL_FRAME_STR, PORTAL_FRAME);
-        //noinspection ResultOfMethodCallIgnored
-        Rock.values(); // force loading
-        //noinspection ResultOfMethodCallIgnored
-        Dust.values(); // force loading
+    private static void initBlocks() {
+        PORTAL_FRAME_ITEM = registerBlock(PORTAL_FRAME_STR, PORTAL_FRAME);
+    }
+
+    public static ItemGroup getItemGroup() {
+        if (ITEM_GROUP != null)
+            return ITEM_GROUP;
+        List<ItemStack> itemList = new LinkedList<>();
+        itemList.add(new ItemStack(PORTAL_FRAME_ITEM));
+        Dust.createRock2DustMap().forEach((rock,dust) -> {
+           itemList.add(new ItemStack(rock));
+           itemList.add(new ItemStack(dust));
+        });
+        ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(PlanetB.MOD_ID,PlanetB.MOD_ID))
+                .icon(() -> new ItemStack(Dust.MOON))
+                .appendItems(list -> list.addAll(itemList))
+                .build();
+        return ITEM_GROUP;
     }
 
     private Content() {/* No instantiation. */}

@@ -17,8 +17,8 @@ import java.util.Map;
 
 public class Content {
 
-    public static final String PORTAL_BLOCK_STR = "portal_block";
-    public static final Block PORTAL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL, MapColor.GRAY).strength(10f, 100f).sounds(BlockSoundGroup.NETHERITE));
+    public static final String PORTAL_FRAME_STR = "portal_frame";
+    public static final Block PORTAL_FRAME = new Block(FabricBlockSettings.of(Material.METAL, MapColor.GRAY).strength(10f, 100f).sounds(BlockSoundGroup.NETHERITE));
 
     public enum Rock implements ItemConvertible {
         JUPITER(MapColor.TERRACOTTA_GREEN),
@@ -93,7 +93,7 @@ public class Content {
     }
 
     public static void initBlocks() {
-        registerBlock(PORTAL_BLOCK_STR, PORTAL_BLOCK);
+        registerBlock(PORTAL_FRAME_STR, PORTAL_FRAME);
         //noinspection ResultOfMethodCallIgnored
         Rock.values(); // force loading
         //noinspection ResultOfMethodCallIgnored

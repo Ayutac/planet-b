@@ -1,24 +1,24 @@
 {
   "display": {
     "icon": {
-      "item": "planet-b:portal_block"
+      "item": "planet-b:portal_frame"
     },
     "title": {
-      "translate": "advancements.planet-b.portal_block"
+      "translate": "advancements.planet-b.portal_frame"
     },
     "description": {
-      "translate": "advancements.planet-b.portal_block.desc"
+      "translate": "advancements.planet-b.portal_frame.desc"
     },
     "hidden": true
   },
-  "parent": "techreborn:advancedmachineblock",
+  "parent": "techreborn:root",
   "criteria": {
     "crit1": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["planet-b:portal_block"]
+            "items": ["planet-b:portal_frame"]
           }
         ]
       }

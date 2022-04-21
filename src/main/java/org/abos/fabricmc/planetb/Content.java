@@ -11,15 +11,14 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import org.abos.fabricmc.planetb.world.gen.feature.OreFeatures;
 
 import java.util.Locale;
 import java.util.Map;
 
 public class Content {
 
-    public static final String REINFORCED_INDUSTRIAL_MACHINE_CASING_STR = "reinforced_industrial_machine_casing";
-    public static final Block REINFORCED_INDUSTRIAL_MACHINE_CASING = new Block(FabricBlockSettings.of(Material.METAL, MapColor.GRAY).strength(10f, 100f).sounds(BlockSoundGroup.NETHERITE));
+    public static final String PORTAL_BLOCK_STR = "portal_block";
+    public static final Block PORTAL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL, MapColor.GRAY).strength(10f, 100f).sounds(BlockSoundGroup.NETHERITE));
 
     public enum Rock implements ItemConvertible {
         JUPITER(MapColor.TERRACOTTA_GREEN),
@@ -94,7 +93,7 @@ public class Content {
     }
 
     public static void initBlocks() {
-        registerBlock(REINFORCED_INDUSTRIAL_MACHINE_CASING_STR, REINFORCED_INDUSTRIAL_MACHINE_CASING);
+        registerBlock(PORTAL_BLOCK_STR, PORTAL_BLOCK);
         //noinspection ResultOfMethodCallIgnored
         Rock.values(); // force loading
         //noinspection ResultOfMethodCallIgnored

@@ -97,6 +97,8 @@ public class Content {
         registerBlock(REINFORCED_INDUSTRIAL_MACHINE_CASING_STR, REINFORCED_INDUSTRIAL_MACHINE_CASING);
         //noinspection ResultOfMethodCallIgnored
         Rock.values(); // force loading
+        //noinspection ResultOfMethodCallIgnored
+        Dust.values(); // force loading
     }
 
     private Content() {/* No instantiation. */}

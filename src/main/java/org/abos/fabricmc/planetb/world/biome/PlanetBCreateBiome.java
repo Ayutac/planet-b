@@ -27,7 +27,8 @@ public class PlanetBCreateBiome {
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
         DefaultBiomeFeatures.addDefaultGrass(generationSettings);
         DefaultBiomeFeatures.addPlainsTallGrass(generationSettings);
-        DefaultBiomeFeatures.addSeagrassOnStone(generationSettings);
+        // DefaultBiomeFeatures.addSeagrassOnStone(generationSettings); doesn't seem to work
+        DefaultBiomeFeatures.addAncientDebris(generationSettings);
 
         return new Biome.Builder()
                 .category(Biome.Category.NONE)

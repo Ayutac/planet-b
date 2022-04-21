@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:industrial_electrolyzer/mars_dust"
+    ]
+  },
+  "criteria": {
+    "has_mars_dust": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:mars_dusts"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:industrial_electrolyzer/mars_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mars_dust",
+      "has_the_recipe"
+    ]
+  ]
+}

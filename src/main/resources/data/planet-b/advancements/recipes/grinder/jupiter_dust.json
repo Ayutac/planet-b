@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:grinder/jupiter_dust"
+    ]
+  },
+  "criteria": {
+    "has_jupiter_rock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:jupiter_rocks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:grinder/jupiter_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_jupiter_rock",
+      "has_the_recipe"
+    ]
+  ]
+}

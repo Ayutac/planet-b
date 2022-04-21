@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:centrifuge/mercury_dust"
+    ]
+  },
+  "criteria": {
+    "has_mercury_dust": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:mercury_dusts"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:centrifuge/mercury_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mercury_dust",
+      "has_the_recipe"
+    ]
+  ]
+}

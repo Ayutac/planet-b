@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:grinder/mars_dust"
+    ]
+  },
+  "criteria": {
+    "has_mars_rock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:mars_rocks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:grinder/mars_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mars_rock",
+      "has_the_recipe"
+    ]
+  ]
+}

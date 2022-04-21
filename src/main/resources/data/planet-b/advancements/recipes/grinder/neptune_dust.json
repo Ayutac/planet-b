@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:grinder/neptune_dust"
+    ]
+  },
+  "criteria": {
+    "has_neptune_rock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:neptune_rocks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:grinder/neptune_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_neptune_rock",
+      "has_the_recipe"
+    ]
+  ]
+}

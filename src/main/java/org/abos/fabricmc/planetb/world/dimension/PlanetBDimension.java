@@ -28,7 +28,7 @@ public class PlanetBDimension {
     );
 
     public static void init() {
-        PlanetB.LOGGER.info("Initializing dimension for + " + PlanetB.MOD_ID);
+        PlanetB.LOGGER.info("Initializing dimension for " + PlanetB.MOD_ID);
         CustomPortalBuilder.beginPortal()
                 .frameBlock(Content.PORTAL_FRAME)
                 .lightWithItem(TRContent.WRENCH)

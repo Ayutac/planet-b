@@ -4,7 +4,7 @@
   "time": 1200,
   "ingredients": [
     {
-      "item": "planet-b:moon_dust",
+      "tag": "c:moon_dusts",
       "count": 9
     },
     {

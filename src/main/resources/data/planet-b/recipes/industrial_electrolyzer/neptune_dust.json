@@ -4,7 +4,7 @@
   "time": 900,
   "ingredients": [
     {
-      "item": "planet-b:neptune_dust",
+      "tag": "c:neptune_dusts",
       "count": 6
     },
     {

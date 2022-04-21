@@ -4,7 +4,7 @@
   "time": 500,
   "ingredients": [
     {
-      "item": "planet-b:saturn_dust",
+      "tag": "c:saturn_dusts",
       "count": 2
     },
     {

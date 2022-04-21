@@ -4,7 +4,7 @@
   "time": 1200,
   "ingredients": [
     {
-      "item": "planet-b:mars_dust",
+      "tag": "c:mars_dusts",
       "count": 9
     },
     {

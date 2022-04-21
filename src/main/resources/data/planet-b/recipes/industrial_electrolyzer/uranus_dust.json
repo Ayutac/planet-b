@@ -4,7 +4,7 @@
   "time": 500,
   "ingredients": [
     {
-      "item": "planet-b:uranus_dust",
+      "tag": "c:uranus_dusts",
       "count": 3
     },
     {

@@ -4,7 +4,7 @@
   "time": 1100,
   "ingredients": [
     {
-      "item": "planet-b:jupiter_dust",
+      "tag": "c:jupiter_dusts",
       "count": 8
     },
     {

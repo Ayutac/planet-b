@@ -4,7 +4,7 @@
   "time": 2000,
   "ingredients": [
     {
-      "item": "planet-b:mercury_dust",
+      "tag": "c:mercury_dusts",
       "count": 2
     },
     {

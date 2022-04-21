@@ -64,7 +64,7 @@ public class Content {
 
         Dust() {
             item = new Item(new FabricItemSettings().group(ItemGroup.MISC));
-            Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name().toLowerCase(Locale.ROOT) + "dust"), item);
+            Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name().toLowerCase(Locale.ROOT) + "_dust"), item);
         }
 
         @Override

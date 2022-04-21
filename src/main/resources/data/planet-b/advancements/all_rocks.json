@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "planet-b:pluto_rock"
+    },
+    "title": {
+      "translate": "advancements.planet-b.all_rocks"
+    },
+    "description": {
+      "translate": "advancements.planet-b.all_rocks.desc"
+    },
+    "frame": "goal"
+  },
+  "parent": "planet-b:any_rock",
+  "criteria": {
+    "jupiter_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:jupiter_rock"] } ] } },
+    "mars_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:mars_rock"] } ] } },
+    "mercury_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:mercury_rock"] } ] } },
+    "moon_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:moon_rock"] } ] } },
+    "neptune_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:neptune_rock"] } ] } },
+    "pluto_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:pluto_rock"] } ] } },
+    "saturn_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:saturn_rock"] } ] } },
+    "uranus_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:uranus_rock"] } ] } },
+    "venus_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:venus_rock"] } ] } }
+  }
+}

@@ -8,10 +8,9 @@
     },
     "description": {
       "translate": "advancements.planet-b.portal_frame.desc"
-    },
-    "hidden": true
+    }
   },
-  "parent": "techreborn:root",
+  "parent": "techreborn:advancedmachineblock",
   "criteria": {
     "crit1": {
       "trigger": "minecraft:inventory_changed",

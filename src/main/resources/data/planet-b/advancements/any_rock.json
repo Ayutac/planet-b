@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "planet-b:moon_rock"
+    },
+    "title": {
+      "translate": "advancements.planet-b.any_rock"
+    },
+    "description": {
+      "translate": "advancements.planet-b.any_rock.desc"
+    }
+  },
+  "parent": "planet-b:portal_frame",
+  "criteria": {
+    "has_sapling": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "planet-b:rocks"
+          }
+        ]
+      }
+    }
+  }
+}

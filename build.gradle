@@ -30,7 +30,10 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
 	modApi ("TechReborn:TechReborn-${project.techreborn_version}") { exclude group: "net.fabricmc.fabric-api" }
+	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta50-1.18'
+	include 'net.kyrptonaught:customportalapi:0.0.1-beta50-1.18'
 }
 
 processResources {

@@ -9,8 +9,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import reborncore.common.misc.TagConvertible;
 
 import java.util.Locale;
 import java.util.Map;
@@ -20,7 +22,7 @@ public class Content {
     public static final String PORTAL_FRAME_STR = "portal_frame";
     public static final Block PORTAL_FRAME = new Block(FabricBlockSettings.of(Material.METAL, MapColor.GRAY).strength(10f, 100f).sounds(BlockSoundGroup.NETHERITE));
 
-    public enum Rock implements ItemConvertible {
+    public enum Rock implements ItemConvertible, TagConvertible<Item> {
         JUPITER(MapColor.TERRACOTTA_GREEN),
         MARS(MapColor.TERRACOTTA_ORANGE),
         MERCURY(MapColor.GOLD),
@@ -31,12 +33,15 @@ public class Content {
         URANUS(MapColor.CYAN),
         VENUS(MapColor.RED);
 
-        private Block block;
-        private Item item;
+        private final Block block;
+        private final Item item;
+        private final TagKey<Item> tag;
 
         Rock(MapColor color) {
+            final String name = name().toLowerCase(Locale.ROOT);
             block = new OreBlock(FabricBlockSettings.of(Material.STONE, color).requiresTool().strength(1.5f, 6f));
-            item = registerBlock(name().toLowerCase() + "_rock", block);
+            item = registerBlock(name + "_rock", block);
+            tag = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, name + "_rocks"));
         }
 
         public Block asBlock() {
@@ -47,9 +52,14 @@ public class Content {
         public Item asItem() {
             return item;
         }
+
+        @Override
+        public TagKey<Item> asTag() {
+            return tag;
+        }
     }
 
-    public enum Dust implements ItemConvertible {
+    public enum Dust implements ItemConvertible, TagConvertible<Item> {
         JUPITER,
         MARS,
         MERCURY,
@@ -60,16 +70,24 @@ public class Content {
         URANUS,
         VENUS;
 
-        private Item item;
+        private final Item item;
+        private final TagKey<Item> tag;
 
         Dust() {
+            final String name = name().toLowerCase(Locale.ROOT);
             item = new Item(new FabricItemSettings().group(ItemGroup.MISC));
-            Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name().toLowerCase(Locale.ROOT) + "_dust"), item);
+            Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name + "_dust"), item);
+            tag = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, name + "_dusts"));
         }
 
         @Override
         public Item asItem() {
             return item;
+        }
+
+        @Override
+        public TagKey<Item> asTag() {
+            return tag;
         }
 
         public static Map<Rock, Dust> createRock2DustMap() {

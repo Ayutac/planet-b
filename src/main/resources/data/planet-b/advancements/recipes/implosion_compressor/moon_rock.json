@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+	"recipes": [
+	  "planet-b:implosion_compressor/moon_rock"
+	]
+  },
+  "criteria": {
+	"has_moon_dust": {
+	  "trigger": "minecraft:inventory_changed",
+	  "conditions": {
+		"items": [
+		  {
+			"tag": "planet-b:moon_dusts"
+		  }
+		]
+	  }
+	},
+	"has_the_recipe": {
+	  "trigger": "minecraft:recipe_unlocked",
+	  "conditions": {
+		"recipe": "planet-b:implosion_compressor/moon_rock"
+	  }
+	}
+  },
+  "requirements": [
+	[
+	  "has_moon_dust",
+	  "has_the_recipe"
+	]
+  ]
+}

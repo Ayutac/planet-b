@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+	"recipes": [
+	  "planet-b:implosion_compressor/pluto_rock"
+	]
+  },
+  "criteria": {
+	"has_pluto_dust": {
+	  "trigger": "minecraft:inventory_changed",
+	  "conditions": {
+		"items": [
+		  {
+			"tag": "planet-b:pluto_dusts"
+		  }
+		]
+	  }
+	},
+	"has_the_recipe": {
+	  "trigger": "minecraft:recipe_unlocked",
+	  "conditions": {
+		"recipe": "planet-b:implosion_compressor/pluto_rock"
+	  }
+	}
+  },
+  "requirements": [
+	[
+	  "has_pluto_dust",
+	  "has_the_recipe"
+	]
+  ]
+}

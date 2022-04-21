@@ -1,0 +1,17 @@
+{
+  "type": "techreborn:grinder",
+  "power": 2,
+  "time": 180,
+
+  "ingredients" : [
+    {
+      "tag": "c:moon_rocks"
+    }
+  ],
+
+  "results" : [
+    {
+      "item": "planet-b:moon_dust"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "techreborn:grinder",
+  "power": 2,
+  "time": 180,
+
+  "ingredients" : [
+    {
+      "tag": "c:jupiter_rocks"
+    }
+  ],
+
+  "results" : [
+    {
+      "item": "planet-b:jupiter_dust"
+    }
+  ]
+}

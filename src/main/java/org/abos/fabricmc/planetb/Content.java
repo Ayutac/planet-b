@@ -73,7 +73,7 @@ public class Content {
             return item;
         }
 
-        public static Map<Rock, Dust> getRock2DustMap() {
+        public static Map<Rock, Dust> createRock2DustMap() {
             var builder = new ImmutableMap.Builder<Rock, Dust>();
             for (Dust dust : Dust.values()) {
                 builder.put(Rock.valueOf(dust.name()), dust);

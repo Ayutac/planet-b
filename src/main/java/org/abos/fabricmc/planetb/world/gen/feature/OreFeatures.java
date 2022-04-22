@@ -32,31 +32,35 @@ public class OreFeatures {
         return Arrays.asList(
                 CountPlacementModifier.of(ore.veinsPerChunk),
                 SquarePlacementModifier.of(),
-                HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(64)));
+                HeightRangePlacementModifier.trapezoid(ore.minYOffset, ore.maxYOffset));
     }
 
     public enum Ore {
-        JUPITER(14, 10),
-        MARS(28, 5),
-        MERCURY(16, 8),
-        MOON(32, 5),
-        NEPTUNE(12, 10),
-        PLUTO(8, 8),
-        SATURN(16, 8),
-        URANUS(12, 10),
-        VENUS(16, 8);
+        JUPITER(14, 10, YOffset.aboveBottom(56), YOffset.aboveBottom(72)), // peak 64 above
+        MARS(28, 5, YOffset.fixed(24), YOffset.fixed(54)), // peak 39
+        MERCURY(16, 8, YOffset.fixed(32), YOffset.fixed(48)), // peak 40
+        MOON(32, 5, YOffset.fixed(32), YOffset.fixed(64)), // peak 48
+        NEPTUNE(12, 10, YOffset.aboveBottom(20), YOffset.aboveBottom(36)), // peak 28 above
+        PLUTO(8, 8, YOffset.aboveBottom(8), YOffset.aboveBottom(24)), // peak 16 above
+        SATURN(16, 8, YOffset.aboveBottom(44), YOffset.aboveBottom(60)), // peak 52 above
+        URANUS(12, 10, YOffset.aboveBottom(32), YOffset.aboveBottom(48)), // peak 40 above
+        VENUS(16, 8, YOffset.fixed(22), YOffset.fixed(40)); // peak 31
 
         private String fullName;
         private int veinsPerChunk;
+        private YOffset minYOffset;
+        private YOffset maxYOffset;
         private ConfiguredFeature<?,?> configuredFeature;
         private PlacedFeature placedFeature;
 
-        Ore(int size, int veinsPerChunk) {
+        Ore(int size, int veinsPerChunk, YOffset minYOffset, YOffset maxYOffset) {
             if (size < 0)
                 size = 0;
             if (veinsPerChunk < 0)
                 veinsPerChunk = 0;
             this.veinsPerChunk = veinsPerChunk;
+            this.minYOffset = minYOffset;
+            this.maxYOffset = maxYOffset;
             fullName = name().toLowerCase(Locale.ROOT) + "_ore";
             BlockState defaultBlockState = Content.Rock.valueOf(name()).asBlock().getDefaultState();
             configuredFeature = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(List.of(

@@ -1,6 +1,7 @@
 package org.abos.fabricmc.planetb.world.gen.feature;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -20,6 +21,16 @@ import java.util.List;
 import java.util.Locale;
 
 public class OreFeatures {
+
+    public static final String ANCIENT_DEBRIS_STR = "ancient_debris_ore";
+    public static final ConfiguredFeature<?,?> ANCIENT_DEBRIS_CONF = new ConfiguredFeature<>(Feature.SCATTERED_ORE, new OreFeatureConfig(List.of(
+            OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, Blocks.ANCIENT_DEBRIS.getDefaultState())),
+            2, 1f
+    ));
+    public static final PlacedFeature ANCIENT_DEBRIS_PLACE = new PlacedFeature(RegistryEntry.of(ANCIENT_DEBRIS_CONF), Arrays.asList(
+            CountPlacementModifier.of(8),
+            SquarePlacementModifier.of(),
+            PlacedFeatures.EIGHT_ABOVE_AND_BELOW_RANGE));
 
     private static List<PlacementModifier> createOrePlacementModifiers(Ore ore) {
         return Arrays.asList(
@@ -76,9 +87,12 @@ public class OreFeatures {
 
     }
 
+
+
     public static void init() {
         //noinspection ResultOfMethodCallIgnored
         Ore.values(); // force loading
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, ANCIENT_DEBRIS_STR), ANCIENT_DEBRIS_PLACE);
     }
 
     private OreFeatures() {/* No instantiation. */}

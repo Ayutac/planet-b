@@ -20,6 +20,8 @@ public class PlanetBBiomes {
 
     private static BiConsumer<BiomeSelectionContext, BiomeModificationContext> oreModifier() {
         return (biomeSelectionContext, biomeModificationContext) -> {
+            biomeModificationContext.getGenerationSettings().addFeature(GenerationStep.Feature.UNDERGROUND_ORES,
+                    BuiltinRegistries.PLACED_FEATURE.getKey(OreFeatures.ANCIENT_DEBRIS_PLACE).orElseThrow());
             for (OreFeatures.Ore ore : OreFeatures.Ore.values()) {
                 biomeModificationContext.getGenerationSettings().addFeature(GenerationStep.Feature.UNDERGROUND_ORES, ore.getPlacedFeatureRegistryKey());
             }

@@ -32,7 +32,24 @@ public class OreFeatures {
             SquarePlacementModifier.of(),
             PlacedFeatures.EIGHT_ABOVE_AND_BELOW_RANGE));
 
-
+    public static final String PACKED_ICE_STR = "packed_ice_ore";
+    public static final ConfiguredFeature<?,?> PACKED_ICE_CONF = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(List.of(
+            OreFeatureConfig.createTarget(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, Blocks.PACKED_ICE.getDefaultState()),
+            OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, Blocks.PACKED_ICE.getDefaultState())),
+            10
+    ));
+    public static final PlacedFeature PACKED_ICE_PLACE_UPPER = new PlacedFeature(RegistryEntry.of(PACKED_ICE_CONF), Arrays.asList(
+            CountPlacementModifier.of(4),
+            SquarePlacementModifier.of(),
+            HeightRangePlacementModifier.uniform(YOffset.fixed(22), YOffset.fixed(56))));
+    public static final PlacedFeature PACKED_ICE_PLACE_BELT = new PlacedFeature(RegistryEntry.of(PACKED_ICE_CONF), Arrays.asList(
+            CountPlacementModifier.of(12),
+            SquarePlacementModifier.of(),
+            HeightRangePlacementModifier.trapezoid(YOffset.aboveBottom(64), YOffset.fixed(24))));
+    public static final PlacedFeature PACKED_ICE_PLACE_LOWER = new PlacedFeature(RegistryEntry.of(PACKED_ICE_CONF), Arrays.asList(
+            CountPlacementModifier.of(8),
+            SquarePlacementModifier.of(),
+            HeightRangePlacementModifier.uniform(YOffset.aboveBottom(4), YOffset.aboveBottom(72))));
 
     private static List<PlacementModifier> createOrePlacementModifiers(Ore ore) {
         return Arrays.asList(
@@ -94,6 +111,10 @@ public class OreFeatures {
         Ore.values(); // force loading
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(PlanetB.MOD_ID, ANCIENT_DEBRIS_STR), ANCIENT_DEBRIS_CONF);
         Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, ANCIENT_DEBRIS_STR), ANCIENT_DEBRIS_PLACE);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(PlanetB.MOD_ID, PACKED_ICE_STR), PACKED_ICE_CONF);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, PACKED_ICE_STR + "upper"), PACKED_ICE_PLACE_UPPER);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, PACKED_ICE_STR + "belt"), PACKED_ICE_PLACE_BELT);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, PACKED_ICE_STR + "lower"), PACKED_ICE_PLACE_LOWER);
     }
 
     private OreFeatures() {/* No instantiation. */}

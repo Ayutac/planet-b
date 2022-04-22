@@ -36,6 +36,18 @@ dependencies {
 	include 'net.kyrptonaught:customportalapi:0.0.1-beta50-1.18'
 }
 
+loom {
+	runs {
+		datagen {
+			server()
+			name "Data Generation"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=src/main/generated"
+			runDir "build/datagen"
+		}
+	}
+}
+
 processResources {
 	inputs.property "version", project.version
 

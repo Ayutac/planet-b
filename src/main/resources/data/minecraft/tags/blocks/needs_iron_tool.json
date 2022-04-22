@@ -2,10 +2,16 @@
   "replace": false,
   "values": [
     "planet-b:jupiter_rock",
+    "planet-b:jupiter_rock_glowing",
     "planet-b:mercury_rock",
+    "planet-b:mercury_rock_glowing",
     "planet-b:neptune_rock",
+    "planet-b:neptune_rock_glowing",
     "planet-b:saturn_rock",
+    "planet-b:saturn_rock_glowing",
     "planet-b:uranus_rock",
-    "planet-b:venus_rock"
+    "planet-b:uranus_rock_glowing",
+    "planet-b:venus_rock",
+    "planet-b:venus_rock_glowing"
   ]
 }

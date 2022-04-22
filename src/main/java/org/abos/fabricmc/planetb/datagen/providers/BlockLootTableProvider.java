@@ -13,5 +13,9 @@ public class BlockLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     protected void generateBlockLootTables() {
         addDrop(Content.PORTAL_FRAME);
+        for (Content.Rock rock : Content.Rock.values()) {
+            addDrop(rock.asBlock());
+            addDrop(rock.asGlowingBlock());
+        }
     }
 }

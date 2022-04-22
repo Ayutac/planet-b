@@ -41,6 +41,7 @@ public class Content {
         URANUS(MapColor.CYAN, 2),
         VENUS(MapColor.RED, 10);
 
+        private final String name;
         private final Block block;
         private final Item item;
         private final Block glowingBlock;
@@ -48,12 +49,19 @@ public class Content {
         private final TagKey<Item> tag;
 
         Rock(final MapColor color, final int glowLightLevel) {
-            final String name = name().toLowerCase(Locale.ROOT);
+            name = name().toLowerCase(Locale.ROOT);
             block = new OreBlock(createRockSettings(color));
             item = registerBlock(name + "_rock", block);
             glowingBlock = new OreBlock(createRockSettings(color).luminance(blockState -> glowLightLevel));
             glowingItem = registerBlock(name + "_rock_glowing", glowingBlock);
             tag = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, name + "_rocks"));
+        }
+
+        /**
+         * @return the lowercase {@link #name()} of this enum entry
+         */
+        public String getName() {
+            return name;
         }
 
         public Block asBlock() {
@@ -90,14 +98,22 @@ public class Content {
         URANUS,
         VENUS;
 
+        private final String name;
         private final Item item;
         private final TagKey<Item> tag;
 
         Dust() {
-            final String name = name().toLowerCase(Locale.ROOT);
+            name = name().toLowerCase(Locale.ROOT);
             item = new Item(new FabricItemSettings().group(ItemGroup.MISC));
             Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name + "_dust"), item);
             tag = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, name + "_dusts"));
+        }
+
+        /**
+         * @return the lowercase {@link #name()} of this enum entry
+         */
+        public String getName() {
+            return name;
         }
 
         @Override

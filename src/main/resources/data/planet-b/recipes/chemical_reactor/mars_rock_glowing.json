@@ -1,0 +1,19 @@
+{
+	"type": "techreborn:chemical_reactor",
+	"power": 30,
+	"time": 400,
+	"ingredients": [
+		{
+			"item": "planet-b:mars_rock"
+		},
+		{
+			"item": "minecraft:glowstone_dust",
+			"count": 2
+		}
+	],
+	"results": [
+		{
+			"item": "planet-b:mars_rock_glowing"
+		}
+	]
+}

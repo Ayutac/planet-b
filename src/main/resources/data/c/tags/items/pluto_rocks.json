@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "planet-b:pluto_rock"
+    "planet-b:pluto_rock",
+    "planet-b:pluto_rock_glowing"
   ]
 }

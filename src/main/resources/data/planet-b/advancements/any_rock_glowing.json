@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "planet-b:venus_rock"
+    },
+    "title": {
+      "translate": "advancements.planet-b.any_rock_glowing"
+    },
+    "description": {
+      "translate": "advancements.planet-b.any_rock_glowing.desc"
+    }
+  },
+  "parent": "planet-b:any_rock",
+  "criteria": {
+    "has_sapling": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "planet-b:rocks_glowing"
+          }
+        ]
+      }
+    }
+  }
+}

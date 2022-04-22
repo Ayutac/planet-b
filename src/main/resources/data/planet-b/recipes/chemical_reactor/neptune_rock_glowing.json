@@ -1,0 +1,18 @@
+{
+	"type": "techreborn:chemical_reactor",
+	"power": 30,
+	"time": 400,
+	"ingredients": [
+		{
+			"item": "planet-b:neptune_rock"
+		},
+		{
+			"item": "techreborn:glowstone_small_dust"
+		}
+	],
+	"results": [
+		{
+			"item": "planet-b:neptune_rock_glowing"
+		}
+	]
+}

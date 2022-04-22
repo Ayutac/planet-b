@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "planet-b:moon_rock"
+    "planet-b:moon_rock",
+    "planet-b:moon_rock_glowing"
   ]
 }

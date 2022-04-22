@@ -13,14 +13,14 @@
   },
   "parent": "planet-b:any_rock",
   "criteria": {
-    "jupiter_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:jupiter_rock"] } ] } },
-    "mars_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:mars_rock"] } ] } },
-    "mercury_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:mercury_rock"] } ] } },
-    "moon_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:moon_rock"] } ] } },
-    "neptune_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:neptune_rock"] } ] } },
-    "pluto_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:pluto_rock"] } ] } },
-    "saturn_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:saturn_rock"] } ] } },
-    "uranus_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:uranus_rock"] } ] } },
-    "venus_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["planet-b:venus_rock"] } ] } }
+    "jupiter_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "tag": "c:jupiter_rocks" } ] } },
+    "mars_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "tag": "c:mars_rocks" } ] } },
+    "mercury_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "tag": "c:mercury_rocks" } ] } },
+    "moon_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "tag": "c:moon_rocks" } ] } },
+    "neptune_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "tag": "c:neptune_rocks" } ] } },
+    "pluto_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "tag": "c:pluto_rocks" } ] } },
+    "saturn_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "tag": "c:saturn_rocks" } ] } },
+    "uranus_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "tag": "c:uranus_rocks" } ] } },
+    "venus_rock": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "tag": "c:venus_rocks" } ] } }
   }
 }

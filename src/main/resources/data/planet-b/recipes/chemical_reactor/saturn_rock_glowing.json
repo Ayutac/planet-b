@@ -1,0 +1,19 @@
+{
+	"type": "techreborn:chemical_reactor",
+	"power": 30,
+	"time": 400,
+	"ingredients": [
+		{
+			"item": "planet-b:saturn_rock"
+		},
+		{
+			"item": "techreborn:glowstone_small_dust",
+			"count": 2
+		}
+	],
+	"results": [
+		{
+			"item": "planet-b:saturn_rock_glowing"
+		}
+	]
+}

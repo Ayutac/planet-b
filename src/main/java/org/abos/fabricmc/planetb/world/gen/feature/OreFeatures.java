@@ -32,6 +32,8 @@ public class OreFeatures {
             SquarePlacementModifier.of(),
             PlacedFeatures.EIGHT_ABOVE_AND_BELOW_RANGE));
 
+
+
     private static List<PlacementModifier> createOrePlacementModifiers(Ore ore) {
         return Arrays.asList(
                 CountPlacementModifier.of(ore.veinsPerChunk),
@@ -87,11 +89,10 @@ public class OreFeatures {
 
     }
 
-
-
     public static void init() {
         //noinspection ResultOfMethodCallIgnored
         Ore.values(); // force loading
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(PlanetB.MOD_ID, ANCIENT_DEBRIS_STR), ANCIENT_DEBRIS_CONF);
         Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, ANCIENT_DEBRIS_STR), ANCIENT_DEBRIS_PLACE);
     }
 

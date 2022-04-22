@@ -26,25 +26,33 @@ public class Content {
 
     private static ItemGroup ITEM_GROUP = null;
 
+    public static AbstractBlock.Settings createRockSettings(MapColor color) {
+        return FabricBlockSettings.of(Material.STONE, color).requiresTool().strength(1.5f, 6f);
+    }
+
     public enum Rock implements ItemConvertible, TagConvertible<Item> {
-        JUPITER(MapColor.TERRACOTTA_GREEN),
-        MARS(MapColor.TERRACOTTA_ORANGE),
-        MERCURY(MapColor.GOLD),
-        MOON(MapColor.WHITE),
-        NEPTUNE(MapColor.TERRACOTTA_CYAN),
-        PLUTO(MapColor.TERRACOTTA_BLUE),
-        SATURN(MapColor.ORANGE),
-        URANUS(MapColor.CYAN),
-        VENUS(MapColor.RED);
+        JUPITER(MapColor.TERRACOTTA_GREEN, 4),
+        MARS(MapColor.TERRACOTTA_ORANGE, 7),
+        MERCURY(MapColor.GOLD, 14),
+        MOON(MapColor.WHITE, 7),
+        NEPTUNE(MapColor.TERRACOTTA_CYAN, 1),
+        PLUTO(MapColor.TERRACOTTA_BLUE, 0),
+        SATURN(MapColor.ORANGE, 3),
+        URANUS(MapColor.CYAN, 2),
+        VENUS(MapColor.RED, 10);
 
         private final Block block;
         private final Item item;
+        private final Block glowingBlock;
+        private final Item glowingItem;
         private final TagKey<Item> tag;
 
-        Rock(MapColor color) {
+        Rock(final MapColor color, final int glowLightLevel) {
             final String name = name().toLowerCase(Locale.ROOT);
-            block = new OreBlock(FabricBlockSettings.of(Material.STONE, color).requiresTool().strength(1.5f, 6f));
+            block = new OreBlock(createRockSettings(color));
             item = registerBlock(name + "_rock", block);
+            glowingBlock = new OreBlock(createRockSettings(color).luminance(blockState -> glowLightLevel));
+            glowingItem = registerBlock("glowing_" + name + "_rock", block);
             tag = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, name + "_rocks"));
         }
 
@@ -55,6 +63,14 @@ public class Content {
         @Override
         public Item asItem() {
             return item;
+        }
+
+        public Block asGlowingBlock() {
+            return glowingBlock;
+        }
+
+        public Item asGlowingItem() {
+            return glowingItem;
         }
 
         @Override
@@ -126,8 +142,9 @@ public class Content {
         List<ItemStack> itemList = new LinkedList<>();
         itemList.add(new ItemStack(PORTAL_FRAME_ITEM));
         Dust.createRock2DustMap().forEach((rock,dust) -> {
-           itemList.add(new ItemStack(rock));
-           itemList.add(new ItemStack(dust));
+            itemList.add(new ItemStack(rock));
+            itemList.add(new ItemStack(rock.asGlowingItem()));
+            itemList.add(new ItemStack(dust));
         });
         ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(PlanetB.MOD_ID,PlanetB.MOD_ID))
                 .icon(() -> new ItemStack(Dust.MOON))

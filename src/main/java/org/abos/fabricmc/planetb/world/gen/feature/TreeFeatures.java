@@ -1,12 +1,15 @@
 package org.abos.fabricmc.planetb.world.gen.feature;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
+import net.minecraft.world.gen.placementmodifier.BlockFilterPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import org.abos.fabricmc.planetb.PlanetB;
 import techreborn.init.TRContent;
@@ -19,6 +22,7 @@ public class TreeFeatures {
 
     public static final PlacedFeature RUBBER_TREE_PLACED_FEATURE = new PlacedFeature(getEntry(BuiltinRegistries.CONFIGURED_FEATURE, WorldGenerator.RUBBER_TREE_FEATURE),
             List.of(
+                    //BlockFilterPlacementModifier.of(BlockPredicate.matchingBlockTag(BlockTags.DIRT))
                     PlacedFeatures.wouldSurvive(TRContent.RUBBER_SAPLING)
             ));
 

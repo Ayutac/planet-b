@@ -7,6 +7,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.GenerationStep;
 import org.abos.fabricmc.planetb.PlanetB;
 import org.abos.fabricmc.planetb.world.gen.feature.OreFeatures;
+import org.abos.fabricmc.planetb.world.gen.feature.TreeFeatures;
 
 import java.util.function.BiConsumer;
 
@@ -15,7 +16,8 @@ public class PlanetBBiomes {
     public static void loadBiomes() {
         Registry.register(BuiltinRegistries.BIOME, PlanetBBiomeRegister.PLAINS_KEY.getValue(), PlanetBCreateBiome.PLAINS);
         BiomeModifications.create(new Identifier(PlanetB.MOD_ID, "features"))
-                .add(ModificationPhase.ADDITIONS, PlanetBBiomeRegister.SELECT_PLANET_B_BIOMES, oreModifier());
+                .add(ModificationPhase.ADDITIONS, PlanetBBiomeRegister.SELECT_PLANET_B_BIOMES, oreModifier())
+                .add(ModificationPhase.ADDITIONS, PlanetBBiomeRegister.SELECT_PLANET_B_BIOMES, treeModifier());
     }
 
     private static BiConsumer<BiomeSelectionContext, BiomeModificationContext> oreModifier() {
@@ -24,6 +26,11 @@ public class PlanetBBiomes {
                 biomeModificationContext.getGenerationSettings().addFeature(GenerationStep.Feature.UNDERGROUND_ORES, ore.getPlacedFeatureRegistryKey());
             }
         };
+    }
+
+    private static BiConsumer<BiomeSelectionContext, BiomeModificationContext> treeModifier() {
+        return (biomeSelectionContext, biomeModificationContext) ->
+                biomeModificationContext.getGenerationSettings().addFeature(GenerationStep.Feature.VEGETAL_DECORATION, BuiltinRegistries.PLACED_FEATURE.getKey(TreeFeatures.RUBBER_TREE_PLACED_FEATURE).orElseThrow());
     }
 
     public static void init() {

@@ -16,7 +16,7 @@ public class PlanetB implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Initializing...");
+		LOGGER.info("Initializing " + MOD_ID + "...");
 
 		Content.init();
 		OreFeatures.init();
@@ -26,7 +26,7 @@ public class PlanetB implements ModInitializer {
 
 		PlanetBBiomes.loadBiomes();
 
-		LOGGER.info("Initializing done!");
+		LOGGER.info("Initializing of " + MOD_ID + " done!");
 	}
 
 }

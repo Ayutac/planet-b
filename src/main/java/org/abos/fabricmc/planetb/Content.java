@@ -52,7 +52,7 @@ public class Content {
             block = new OreBlock(createRockSettings(color));
             item = registerBlock(name + "_rock", block);
             glowingBlock = new OreBlock(createRockSettings(color).luminance(blockState -> glowLightLevel));
-            glowingItem = registerBlock(name + "_rock_glowing", block);
+            glowingItem = registerBlock(name + "_rock_glowing", glowingBlock);
             tag = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, name + "_rocks"));
         }
 

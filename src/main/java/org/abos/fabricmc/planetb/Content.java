@@ -26,6 +26,10 @@ public class Content {
 
     private static ItemGroup ITEM_GROUP = null;
 
+    public static final TagKey<Item> MUNDANE_ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "mundane_rocks"));
+    public static final TagKey<Item> GLOWING_ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "glowing_rocks"));
+    public static final TagKey<Item> ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rocks"));
+
     public static AbstractBlock.Settings createRockSettings(MapColor color) {
         return FabricBlockSettings.of(Material.STONE, color).requiresTool().strength(1.5f, 6f);
     }
@@ -86,6 +90,8 @@ public class Content {
             return tag;
         }
     }
+
+    public static final TagKey<Item> DUSTS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "dusts"));
 
     public enum Dust implements ItemConvertible, TagConvertible<Item> {
         JUPITER,

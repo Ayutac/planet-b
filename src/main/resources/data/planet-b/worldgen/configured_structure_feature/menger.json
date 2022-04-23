@@ -1,7 +1,7 @@
 {
   "type": "minecraft:village",
   "config": {
-    "start_pool": "planet-b:menger_small",
+    "start_pool": "planet-b:menger",
     "size": 1
   },
   "biomes": "planet-b:plains",

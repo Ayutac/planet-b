@@ -54,7 +54,7 @@ public class Content {
             item = registerBlock(name + "_rock", block);
             glowingBlock = new OreBlock(createRockSettings(color).luminance(blockState -> glowLightLevel));
             glowingItem = registerBlock(name + "_rock_glowing", glowingBlock);
-            tag = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, name + "_rocks"));
+            tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", name + "_rocks"));
         }
 
         /**
@@ -106,7 +106,7 @@ public class Content {
             name = name().toLowerCase(Locale.ROOT);
             item = new Item(new FabricItemSettings().group(ItemGroup.MISC));
             Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name + "_dust"), item);
-            tag = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, name + "_dusts"));
+            tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", name + "_dusts"));
         }
 
         /**

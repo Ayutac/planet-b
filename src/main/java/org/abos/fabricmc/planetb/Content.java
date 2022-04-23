@@ -45,6 +45,9 @@ public class Content {
         private final Item item;
         private final Block glowingBlock;
         private final Item glowingItem;
+        private final Block stairs;
+        private final Block slab;
+        private final Block wall;
         private final TagKey<Item> tag;
 
         Rock(final MapColor color, final int glowLightLevel) {
@@ -53,6 +56,12 @@ public class Content {
             item = registerBlock(name + "_rock", block);
             glowingBlock = new OreBlock(createRockSettings(color).luminance(blockState -> glowLightLevel));
             glowingItem = registerBlock(name + "_rock_glowing", glowingBlock);
+            stairs = new StairsBlock(block.getDefaultState(), createRockSettings(color));
+            registerBlock(name + "_rock_stairs", stairs);
+            slab = new StairsBlock(block.getDefaultState(), createRockSettings(color));
+            registerBlock(name + "_rock_slab", slab);
+            wall = new StairsBlock(block.getDefaultState(), createRockSettings(color));
+            registerBlock(name + "_rock_wall", wall);
             tag = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, name + "_rocks"));
         }
 
@@ -71,6 +80,18 @@ public class Content {
 
         public Item asGlowingItem() {
             return glowingItem;
+        }
+
+        public Block getStairs() {
+            return stairs;
+        }
+
+        public Block getSlab() {
+            return slab;
+        }
+
+        public Block getWall() {
+            return wall;
         }
 
         @Override

@@ -3,6 +3,9 @@
   "values": [
     "planet-b:mercury_rock",
     "planet-b:mercury_rock_glowing",
+    "planet-b:mercury_rock_slab",
+    "planet-b:mercury_rock_stairs",
+    "planet-b:mercury_rock_wall",
     "planet-b:mercury_dust"
   ]
 }

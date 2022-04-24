@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "planet-b:jupiter_rock_slab",
+    "planet-b:mars_rock_slab",
+    "planet-b:mercury_rock_slab",
+    "planet-b:moon_rock_slab",
+    "planet-b:neptune_rock_slab",
+    "planet-b:pluto_rock_slab",
+    "planet-b:saturn_rock_slab",
+    "planet-b:uranus_rock_slab",
+    "planet-b:venus_rock_slab"
+  ]
+}

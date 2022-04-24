@@ -1,11 +1,14 @@
 package org.abos.fabricmc.planetb.world.biome;
 
 import net.minecraft.sound.BiomeMoodSound;
+import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
+import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
+import org.abos.fabricmc.planetb.world.gen.feature.TreeFeatures;
 
 public class PlanetBCreateBiome {
 
@@ -27,6 +30,7 @@ public class PlanetBCreateBiome {
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
         DefaultBiomeFeatures.addDefaultGrass(generationSettings);
         DefaultBiomeFeatures.addPlainsTallGrass(generationSettings);
+        //generationSettings.feature(GenerationStep.Feature.VEGETAL_DECORATION, BuiltinRegistries.PLACED_FEATURE.getKey(TreeFeatures.RUBBER_TREE_PLACED_FEATURE).orElseThrow().);
         // DefaultBiomeFeatures.addSeagrassOnStone(generationSettings); doesn't seem to work
         DefaultBiomeFeatures.addAncientDebris(generationSettings);
 

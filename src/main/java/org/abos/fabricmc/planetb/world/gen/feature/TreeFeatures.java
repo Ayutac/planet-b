@@ -24,9 +24,9 @@ public class TreeFeatures {
 
     public static final PlacedFeature RUBBER_TREE_PLACED_FEATURE = new PlacedFeature(getEntry(BuiltinRegistries.CONFIGURED_FEATURE, WorldGenerator.RUBBER_TREE_FEATURE),
             List.of(
-                    SurfaceWaterDepthFilterPlacementModifier.of(0),
-                    RarityFilterPlacementModifier.of(15),
-                    BiomePlacementModifier.of(),
+                    //SurfaceWaterDepthFilterPlacementModifier.of(0),
+                    //RarityFilterPlacementModifier.of(15),
+                    //BiomePlacementModifier.of(),
                     PlacedFeatures.wouldSurvive(TRContent.RUBBER_SAPLING)
             ));
 
@@ -35,7 +35,7 @@ public class TreeFeatures {
     }
 
     public static void init() {
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, "rubber_tree/plains"), RUBBER_TREE_PLACED_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, "rubber_tree"), RUBBER_TREE_PLACED_FEATURE);
     }
 
     private TreeFeatures() {/* No instantiation. */}

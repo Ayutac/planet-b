@@ -16,8 +16,9 @@ public class PlanetBBiomes {
     public static void loadBiomes() {
         Registry.register(BuiltinRegistries.BIOME, PlanetBBiomeRegister.PLAINS_KEY.getValue(), PlanetBCreateBiome.PLAINS);
         BiomeModifications.create(new Identifier(PlanetB.MOD_ID, "features"))
-                .add(ModificationPhase.ADDITIONS, PlanetBBiomeRegister.SELECT_PLANET_B_BIOMES, oreModifier());
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(PlanetBBiomeRegister.PLAINS_KEY), GenerationStep.Feature.VEGETAL_DECORATION, BuiltinRegistries.PLACED_FEATURE.getKey(TreeFeatures.RUBBER_TREE_PLACED_FEATURE).orElseThrow());
+                .add(ModificationPhase.ADDITIONS, PlanetBBiomeRegister.SELECT_PLANET_B_BIOMES, oreModifier())
+                .add(ModificationPhase.ADDITIONS, PlanetBBiomeRegister.SELECT_PLANET_B_BIOMES, treeModifier());
+        //BiomeModifications.addFeature(BiomeSelectors.includeByKey(PlanetBBiomeRegister.PLAINS_KEY), GenerationStep.Feature.VEGETAL_DECORATION, BuiltinRegistries.PLACED_FEATURE.getKey(TreeFeatures.RUBBER_TREE_PLACED_FEATURE).orElseThrow());
     }
 
     private static BiConsumer<BiomeSelectionContext, BiomeModificationContext> oreModifier() {

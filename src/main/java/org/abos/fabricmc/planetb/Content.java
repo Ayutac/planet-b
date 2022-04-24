@@ -165,6 +165,9 @@ public class Content {
         Dust.createRock2DustMap().forEach((rock,dust) -> {
             itemList.add(new ItemStack(rock));
             itemList.add(new ItemStack(rock.asGlowingItem()));
+            itemList.add(new ItemStack(rock.getStairs()));
+            itemList.add(new ItemStack(rock.getSlab()));
+            itemList.add(new ItemStack(rock.getWall()));
             itemList.add(new ItemStack(dust));
         });
         ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(PlanetB.MOD_ID,PlanetB.MOD_ID))

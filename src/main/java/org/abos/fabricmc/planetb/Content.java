@@ -126,6 +126,7 @@ public class Content {
     public static final TagKey<Item> DUSTS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "dusts"));
 
     public enum Dust implements ItemConvertible, TagConvertible<Item> {
+        GALAXY,
         JUPITER,
         MARS,
         MERCURY,
@@ -167,7 +168,13 @@ public class Content {
         public static Map<Rock, Dust> createRock2DustMap() {
             var builder = new ImmutableMap.Builder<Rock, Dust>();
             for (Dust dust : Dust.values()) {
-                builder.put(Rock.valueOf(dust.name()), dust);
+                try {
+                    builder.put(Rock.valueOf(dust.name()), dust);
+                }
+                catch (IllegalArgumentException ex) {
+                    // TODO add logger and log if dev
+                }
+
             }
             return builder.build();
         }

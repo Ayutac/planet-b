@@ -2,6 +2,8 @@
   "block.planet-b.portal_frame": "Reinforced Machine Casing",
   "item.planet-b.portal_frame": "Reinforced Machine Casing",
 
+  "item.planet-b.galaxy_dust": "Galaxy Dust",
+
   "block.planet-b.jupiter_rock": "Jupiter Rock",
   "item.planet-b.jupiter_rock": "Jupiter Rock",
   "block.planet-b.jupiter_rock_glowing": "Glowing Jupiter Rock",

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "planet-b:block/neptune_rock_slab"
+    },
+    "type=double": {
+      "model": "planet-b:block/neptune_rock"
+    },
+    "type=top": {
+      "model": "planet-b:block/neptune_rock_slab_top"
+    }
+  }
+}

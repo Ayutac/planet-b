@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_wall_side",
   "textures": {
-    "wall": "techreborn:block/pluto_rock"
+    "wall": "planet-b:block/pluto_rock"
   }
 }

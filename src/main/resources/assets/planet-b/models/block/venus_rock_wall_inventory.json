@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/wall_inventory",
   "textures": {
-    "wall": "techreborn:block/venus_rock"
+    "wall": "planet-b:block/venus_rock"
   }
 }

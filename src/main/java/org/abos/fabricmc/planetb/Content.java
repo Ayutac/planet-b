@@ -58,9 +58,9 @@ public class Content {
             glowingItem = registerBlock(name + "_rock_glowing", glowingBlock);
             stairs = new StairsBlock(block.getDefaultState(), createRockSettings(color));
             registerBlock(name + "_rock_stairs", stairs);
-            slab = new StairsBlock(block.getDefaultState(), createRockSettings(color));
+            slab = new SlabBlock(createRockSettings(color));
             registerBlock(name + "_rock_slab", slab);
-            wall = new StairsBlock(block.getDefaultState(), createRockSettings(color));
+            wall = new WallBlock(createRockSettings(color));
             registerBlock(name + "_rock_wall", wall);
             tag = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, name + "_rocks"));
         }

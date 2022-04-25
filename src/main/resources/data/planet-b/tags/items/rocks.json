@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#planet-b:rocks_mundane",
-    "#planet-b:rocks_glowing"
+    "#planet-b:mundane_rocks",
+    "#planet-b:glowing_rocks"
   ]
 }

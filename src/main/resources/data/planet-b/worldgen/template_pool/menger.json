@@ -1,0 +1,33 @@
+{
+  "name": "planet_b:menger",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 89,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "planet-b:menger_small",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "planet-b:menger_medium",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "planet-b:menger_large",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

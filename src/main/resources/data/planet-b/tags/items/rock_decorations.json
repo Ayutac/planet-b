@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#planet-b:rock_slabs",
+    "#planet-b:rock_stairs",
+    "#planet-b:rock_walls"
+  ]
+}

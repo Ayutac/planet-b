@@ -16,10 +16,19 @@ public class BlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void generateTags() {
         FabricTagBuilder<Block> pickaxe = getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE);
+        FabricTagBuilder<Block> slabs = getOrCreateTagBuilder(BlockTags.SLABS);
+        FabricTagBuilder<Block> stairs = getOrCreateTagBuilder(BlockTags.STAIRS);
+        FabricTagBuilder<Block> walls = getOrCreateTagBuilder(BlockTags.WALLS);
         pickaxe.add(Content.PORTAL_FRAME);
         for (Content.Rock rock : Content.Rock.values()) {
             pickaxe.add(rock.asBlock());
             pickaxe.add(rock.asGlowingBlock());
+            pickaxe.add(rock.getSlab());
+            slabs.add(rock.getSlab());
+            pickaxe.add(rock.getStairs());
+            stairs.add(rock.getStairs());
+            pickaxe.add(rock.getWall());
+            walls.add(rock.getWall());
         }
     }
 }

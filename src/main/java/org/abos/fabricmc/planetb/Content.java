@@ -29,6 +29,10 @@ public class Content {
     public static final TagKey<Item> MUNDANE_ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "mundane_rocks"));
     public static final TagKey<Item> GLOWING_ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "glowing_rocks"));
     public static final TagKey<Item> ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rocks"));
+    public static final TagKey<Item> ROCK_SLABS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rock_slabs"));
+    public static final TagKey<Item> ROCK_STAIRS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rock_stairs"));
+    public static final TagKey<Item> ROCK_WALLS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rock_walls"));
+    public static final TagKey<Item> ROCK_DECORATIONS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rock_decorations"));
 
     public static AbstractBlock.Settings createRockSettings(MapColor color) {
         return FabricBlockSettings.of(Material.STONE, color).requiresTool().strength(1.5f, 6f);

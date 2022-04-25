@@ -1,3 +1,3 @@
-Rock textures are recolorings of Andesite.
-Dust textures are recolorings of Redstone.
+Rock and dust textures by Nic.
 Placeholder for Portal Frame is TechReborn's Advanced Machine Casing texture.
+Mod icon by Lumeen_.

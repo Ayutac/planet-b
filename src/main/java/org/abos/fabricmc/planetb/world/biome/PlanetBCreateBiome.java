@@ -5,11 +5,14 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
+import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
+import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 
 public class PlanetBCreateBiome {
 
     public static final Biome PLAINS = createPlains();
+    public static final Biome FOREST = createForest();
 
     public static BiomeEffects createEffects() {
         return new BiomeEffects.Builder()
@@ -34,6 +37,26 @@ public class PlanetBCreateBiome {
                 .category(Biome.Category.NONE)
                 .temperature(0.3f).temperatureModifier(Biome.TemperatureModifier.NONE)
                 .downfall(0.2f).precipitation(Biome.Precipitation.RAIN)
+                .effects(createEffects())
+                .generationSettings(generationSettings.build())
+                .spawnSettings(spawnSettings.build())
+                .build();
+    }
+
+    private static Biome createForest() {
+        SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
+        // DefaultBiomeFeatures.addFarmAnimals(spawnSettings);
+
+        GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
+        DefaultBiomeFeatures.addDefaultGrass(generationSettings);
+        DefaultBiomeFeatures.addTaigaTrees(generationSettings);
+        // DefaultBiomeFeatures.addSeagrassOnStone(generationSettings); doesn't seem to work
+        DefaultBiomeFeatures.addAncientDebris(generationSettings);
+
+        return new Biome.Builder()
+                .category(Biome.Category.NONE)
+                .temperature(0.4f).temperatureModifier(Biome.TemperatureModifier.NONE)
+                .downfall(0.5f).precipitation(Biome.Precipitation.RAIN)
                 .effects(createEffects())
                 .generationSettings(generationSettings.build())
                 .spawnSettings(spawnSettings.build())

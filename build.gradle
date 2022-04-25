@@ -36,6 +36,38 @@ dependencies {
 	include 'net.kyrptonaught:customportalapi:0.0.1-beta50-1.18'
 }
 
+sourceSets {
+	// Add a data gen sourceset
+	datagen {
+		compileClasspath += main.compileClasspath
+		runtimeClasspath += main.runtimeClasspath
+		compileClasspath += main.output
+		runtimeClasspath += main.output
+	}
+
+	main {
+		resources {
+			srcDirs += [
+					'src/main/generated'
+			]
+		}
+	}
+}
+
+loom {
+	runs {
+		datagen {
+			server()
+			name "Data Generation"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+			vmArg "-Dfabric-api.datagen.modid=planet-b-datagen"
+			runDir "build/datagen"
+			source sourceSets.datagen
+		}
+	}
+}
+
 processResources {
 	inputs.property "version", project.version
 
@@ -57,9 +89,11 @@ java {
 }
 
 jar {
+	from file('src/main/generated')
 	from("LICENSE") {
 		rename { "${it}_${project.archivesBaseName}"}
 	}
+	dependsOn 'runDatagen'
 }
 
 // configure the maven publication

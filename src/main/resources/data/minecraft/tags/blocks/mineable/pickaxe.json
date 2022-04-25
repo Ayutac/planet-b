@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "planet-b:portal_frame",
     "planet-b:jupiter_rock",
     "planet-b:jupiter_rock_glowing",
     "planet-b:jupiter_rock_slab",

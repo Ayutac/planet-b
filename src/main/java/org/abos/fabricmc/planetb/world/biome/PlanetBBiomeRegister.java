@@ -13,9 +13,10 @@ import java.util.function.Predicate;
 public class PlanetBBiomeRegister {
 
     public static final RegistryKey<Biome> PLAINS_KEY = registerKey("plains");
+    public static final RegistryKey<Biome> FOREST_KEY = registerKey("forest");
 
     public static final Predicate<BiomeSelectionContext> SELECT_PLANET_B_BIOMES = BiomeSelectors.includeByKey(
-            PLAINS_KEY);
+            PLAINS_KEY, FOREST_KEY);
 
     private static RegistryKey<Biome> registerKey(String name){
         return RegistryKey.of(Registry.BIOME_KEY, new Identifier(PlanetB.MOD_ID, name));

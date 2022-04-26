@@ -13,6 +13,7 @@ import java.util.function.BiConsumer;
 public class PlanetBBiomes {
 
     public static void loadBiomes() {
+        Registry.register(BuiltinRegistries.BIOME, PlanetBBiomeRegister.FOREST_KEY.getValue(), PlanetBCreateBiome.FOREST);
         Registry.register(BuiltinRegistries.BIOME, PlanetBBiomeRegister.PLAINS_KEY.getValue(), PlanetBCreateBiome.PLAINS);
         BiomeModifications.create(new Identifier(PlanetB.MOD_ID, "features"))
                 .add(ModificationPhase.ADDITIONS, PlanetBBiomeRegister.SELECT_PLANET_B_BIOMES, oreModifier());

@@ -16,6 +16,18 @@
             "erosion": 0.05,
             "weirdness": 0.3,
             "depth": 0.7,
+            "offset": 1
+          }
+        },
+        {
+          "biome": "planet-b:forest",
+          "parameters": {
+            "temperature": 0.3,
+            "humidity": 0.3,
+            "continentalness": 1.5,
+            "erosion": 0.1,
+            "weirdness": 0.3,
+            "depth": 0.7,
             "offset": 0
           }
         }

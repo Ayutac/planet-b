@@ -38,6 +38,13 @@ public class Content {
         return FabricBlockSettings.of(Material.STONE, color).requiresTool().strength(1.5f, 6f);
     }
 
+    public static BlockItem registerBlock(String name, Block block) {
+        Registry.register(Registry.BLOCK, new Identifier(PlanetB.MOD_ID, name), block);
+        BlockItem item = new BlockItem(block, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name), item);
+        return item;
+    }
+
     public enum Rock implements ItemConvertible, TagConvertible<Item> {
         JUPITER(MapColor.TERRACOTTA_GREEN, 4),
         MARS(MapColor.TERRACOTTA_ORANGE, 7),
@@ -170,13 +177,6 @@ public class Content {
         PlanetB.LOGGER.info("Initializing items...");
         initBlocks();
         getItemGroup(); // ensures enum loading
-    }
-
-    public static BlockItem registerBlock(String name, Block block) {
-        Registry.register(Registry.BLOCK, new Identifier(PlanetB.MOD_ID, name), block);
-        BlockItem item = new BlockItem(block, new FabricItemSettings());
-        Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name), item);
-        return item;
     }
 
     private static void initBlocks() {

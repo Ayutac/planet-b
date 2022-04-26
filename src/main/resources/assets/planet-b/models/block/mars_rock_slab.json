@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "planet-b:block/mars_rock",
+    "top": "planet-b:block/mars_rock",
+    "side": "planet-b:block/mars_rock"
+  }
+}

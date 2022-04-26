@@ -29,9 +29,20 @@ public class Content {
     public static final TagKey<Item> MUNDANE_ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "mundane_rocks"));
     public static final TagKey<Item> GLOWING_ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "glowing_rocks"));
     public static final TagKey<Item> ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rocks"));
+    public static final TagKey<Item> ROCK_SLABS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rock_slabs"));
+    public static final TagKey<Item> ROCK_STAIRS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rock_stairs"));
+    public static final TagKey<Item> ROCK_WALLS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rock_walls"));
+    public static final TagKey<Item> ROCK_DECORATIONS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rock_decorations"));
 
     public static AbstractBlock.Settings createRockSettings(MapColor color) {
         return FabricBlockSettings.of(Material.STONE, color).requiresTool().strength(1.5f, 6f);
+    }
+
+    public static BlockItem registerBlock(String name, Block block) {
+        Registry.register(Registry.BLOCK, new Identifier(PlanetB.MOD_ID, name), block);
+        BlockItem item = new BlockItem(block, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name), item);
+        return item;
     }
 
     public enum Rock implements ItemConvertible, TagConvertible<Item> {
@@ -50,6 +61,9 @@ public class Content {
         private final Item item;
         private final Block glowingBlock;
         private final Item glowingItem;
+        private final Block stairs;
+        private final Block slab;
+        private final Block wall;
         private final TagKey<Item> tag;
 
         Rock(final MapColor color, final int glowLightLevel) {
@@ -58,6 +72,12 @@ public class Content {
             item = registerBlock(name + "_rock", block);
             glowingBlock = new OreBlock(createRockSettings(color).luminance(blockState -> glowLightLevel));
             glowingItem = registerBlock(name + "_rock_glowing", glowingBlock);
+            stairs = new StairsBlock(block.getDefaultState(), createRockSettings(color));
+            registerBlock(name + "_rock_stairs", stairs);
+            slab = new SlabBlock(createRockSettings(color));
+            registerBlock(name + "_rock_slab", slab);
+            wall = new WallBlock(createRockSettings(color));
+            registerBlock(name + "_rock_wall", wall);
             tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", name + "_rocks"));
         }
 
@@ -83,6 +103,18 @@ public class Content {
 
         public Item asGlowingItem() {
             return glowingItem;
+        }
+
+        public Block getStairs() {
+            return stairs;
+        }
+
+        public Block getSlab() {
+            return slab;
+        }
+
+        public Block getWall() {
+            return wall;
         }
 
         @Override
@@ -147,13 +179,6 @@ public class Content {
         getItemGroup(); // ensures enum loading
     }
 
-    public static BlockItem registerBlock(String name, Block block) {
-        Registry.register(Registry.BLOCK, new Identifier(PlanetB.MOD_ID, name), block);
-        BlockItem item = new BlockItem(block, new FabricItemSettings());
-        Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name), item);
-        return item;
-    }
-
     private static void initBlocks() {
         PORTAL_FRAME_ITEM = registerBlock(PORTAL_FRAME_STR, PORTAL_FRAME);
     }
@@ -166,6 +191,9 @@ public class Content {
         Dust.createRock2DustMap().forEach((rock,dust) -> {
             itemList.add(new ItemStack(rock));
             itemList.add(new ItemStack(rock.asGlowingItem()));
+            itemList.add(new ItemStack(rock.getStairs()));
+            itemList.add(new ItemStack(rock.getSlab()));
+            itemList.add(new ItemStack(rock.getWall()));
             itemList.add(new ItemStack(dust));
         });
         ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(PlanetB.MOD_ID,PlanetB.MOD_ID))

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "planet-b:pluto_rock"
+  },
+  "result": "planet-b:pluto_rock_slab",
+  "count": 2
+}

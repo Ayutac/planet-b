@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "planet-b:venus_rock_stairs"
+    },
+    "title": {
+      "translate": "advancements.planet-b.any_rock_decoration"
+    },
+    "description": {
+      "translate": "advancements.planet-b.any_rock_decoration.desc"
+    }
+  },
+  "parent": "planet-b:any_rock",
+  "criteria": {
+    "has_sapling": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "items": [
+          {
+            "tag": "planet-b:rock_decorations"
+          }
+        ]
+      }
+    }
+  }
+}

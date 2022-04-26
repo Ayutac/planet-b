@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "planet-b:jupiter_rock_stairs",
+    "planet-b:mars_rock_stairs",
+    "planet-b:mercury_rock_stairs",
+    "planet-b:moon_rock_stairs",
+    "planet-b:neptune_rock_stairs",
+    "planet-b:pluto_rock_stairs",
+    "planet-b:saturn_rock_stairs",
+    "planet-b:uranus_rock_stairs",
+    "planet-b:venus_rock_stairs"
+  ]
+}

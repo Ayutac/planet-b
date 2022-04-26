@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "planet-b:saturn_rock"
+  },
+  "result": "planet-b:saturn_rock_slab",
+  "count": 2
+}

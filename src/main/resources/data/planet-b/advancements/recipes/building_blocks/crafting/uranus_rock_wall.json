@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:crafting/uranus_rock_wall"
+    ]
+  },
+  "criteria": {
+    "has_uranus_rockuranus": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "planet-b:uranus_rock"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:crafting/uranus_rock_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_uranus_rockuranus",
+      "has_the_recipe"
+    ]
+  ]
+}

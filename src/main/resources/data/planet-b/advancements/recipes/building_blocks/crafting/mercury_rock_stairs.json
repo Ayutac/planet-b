@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:crafting/mercury_rock_stairs"
+    ]
+  },
+  "criteria": {
+    "has_mercury_rockmercury": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "planet-b:mercury_rock"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:crafting/mercury_rock_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mercury_rockmercury",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:smelting/moon_rock"
+    ]
+  },
+  "criteria": {
+    "has_moon_rock_glowing": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "planet-b:moon_rock_glowing"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:smelting/moon_rock"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_moon_rock_glowing",
+      "has_the_recipe"
+    ]
+  ]
+}

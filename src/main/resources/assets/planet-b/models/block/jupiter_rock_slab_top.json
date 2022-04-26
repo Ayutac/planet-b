@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "planet-b:block/jupiter_rock",
+    "top": "planet-b:block/jupiter_rock",
+    "side": "planet-b:block/jupiter_rock"
+  }
+}

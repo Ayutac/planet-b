@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:crafting/saturn_rock_wall"
+    ]
+  },
+  "criteria": {
+    "has_saturn_rocksaturn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "planet-b:saturn_rock"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:crafting/saturn_rock_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_saturn_rocksaturn",
+      "has_the_recipe"
+    ]
+  ]
+}

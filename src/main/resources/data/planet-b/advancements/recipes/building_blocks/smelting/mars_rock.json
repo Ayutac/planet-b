@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:smelting/mars_rock"
+    ]
+  },
+  "criteria": {
+    "has_mars_rock_glowing": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "planet-b:mars_rock_glowing"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:smelting/mars_rock"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mars_rock_glowing",
+      "has_the_recipe"
+    ]
+  ]
+}

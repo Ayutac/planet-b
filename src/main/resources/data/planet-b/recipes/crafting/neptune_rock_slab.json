@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "planet-b:neptune_rock"
+    }
+  },
+  "result": {
+    "item": "planet-b:neptune_rock_slab"
+  }
+}

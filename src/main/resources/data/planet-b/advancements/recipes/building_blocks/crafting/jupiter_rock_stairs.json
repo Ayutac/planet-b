@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:crafting/jupiter_rock_stairs"
+    ]
+  },
+  "criteria": {
+    "has_jupiter_rockjupiter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "planet-b:jupiter_rock"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:crafting/jupiter_rock_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_jupiter_rockjupiter",
+      "has_the_recipe"
+    ]
+  ]
+}

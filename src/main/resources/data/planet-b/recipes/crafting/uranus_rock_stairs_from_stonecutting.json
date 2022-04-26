@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "planet-b:uranus_rock"
+  },
+  "result": "planet-b:uranus_rock_stairs",
+  "count": 1
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "planet-b:neptune_rock"
+  },
+  "result": "planet-b:neptune_rock_wall",
+  "count": 1
+}

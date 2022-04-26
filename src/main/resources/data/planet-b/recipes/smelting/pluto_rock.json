@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "planet-b:pluto_rock_glowing"
+  },
+  "result": "planet-b:pluto_rock",
+  "experience": 0.1,
+  "cookingtime": 200
+}

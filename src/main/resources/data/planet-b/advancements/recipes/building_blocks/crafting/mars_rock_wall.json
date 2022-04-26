@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:crafting/mars_rock_wall"
+    ]
+  },
+  "criteria": {
+    "has_mars_rockmars": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "planet-b:mars_rock"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:crafting/mars_rock_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mars_rockmars",
+      "has_the_recipe"
+    ]
+  ]
+}

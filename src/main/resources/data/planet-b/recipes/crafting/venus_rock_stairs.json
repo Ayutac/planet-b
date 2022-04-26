@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X  ",
+    "XX ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "planet-b:venus_rock"
+    }
+  },
+  "result": {
+    "item": "planet-b:venus_rock_stairs"
+  }
+}

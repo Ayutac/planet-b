@@ -16,6 +16,9 @@ public class BlockLootTableProvider extends FabricBlockLootTableProvider {
         for (Content.Rock rock : Content.Rock.values()) {
             addDrop(rock.asBlock());
             addDrop(rock.asGlowingBlock());
+            addDrop(rock.getSlab());
+            addDrop(rock.getStairs());
+            addDrop(rock.getWall());
         }
     }
 }

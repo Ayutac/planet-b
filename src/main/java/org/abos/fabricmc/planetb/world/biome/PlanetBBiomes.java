@@ -4,19 +4,30 @@ import net.fabricmc.fabric.api.biome.v1.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
 import org.abos.fabricmc.planetb.PlanetB;
 import org.abos.fabricmc.planetb.world.gen.feature.OreFeatures;
 
 import java.util.function.BiConsumer;
+import java.util.function.Predicate;
 
 public class PlanetBBiomes {
 
+    public static final RegistryKey<Biome> PLAINS_KEY = registerKey("plains");
+    public static final RegistryKey<Biome> FOREST_KEY = registerKey("forest");
+
+    public static final Predicate<BiomeSelectionContext> SELECT_PLANET_B_BIOMES = BiomeSelectors.includeByKey(
+            PLAINS_KEY, FOREST_KEY);
+
+    private static RegistryKey<Biome> registerKey(String name){
+        return RegistryKey.of(Registry.BIOME_KEY, new Identifier(PlanetB.MOD_ID, name));
+    }
+
     public static void loadBiomes() {
-        Registry.register(BuiltinRegistries.BIOME, PlanetBBiomeRegister.FOREST_KEY.getValue(), PlanetBCreateBiome.FOREST);
-        Registry.register(BuiltinRegistries.BIOME, PlanetBBiomeRegister.PLAINS_KEY.getValue(), PlanetBCreateBiome.PLAINS);
         BiomeModifications.create(new Identifier(PlanetB.MOD_ID, "features"))
-                .add(ModificationPhase.ADDITIONS, PlanetBBiomeRegister.SELECT_PLANET_B_BIOMES, oreModifier());
+                .add(ModificationPhase.ADDITIONS, SELECT_PLANET_B_BIOMES, oreModifier());
     }
 
     private static BiConsumer<BiomeSelectionContext, BiomeModificationContext> oreModifier() {

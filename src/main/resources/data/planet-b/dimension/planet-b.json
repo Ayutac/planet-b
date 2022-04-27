@@ -30,6 +30,18 @@
             "depth": 0.7,
             "offset": 0
           }
+        },
+        {
+          "biome": "planet-b:mushroom_forest",
+          "parameters": {
+            "temperature": 0.3,
+            "humidity": 0.3,
+            "continentalness": 1.5,
+            "erosion": 0.1,
+            "weirdness": 0.5,
+            "depth": 0.7,
+            "offset": 0
+          }
         }
       ]
     }

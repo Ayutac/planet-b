@@ -1,0 +1,31 @@
+{
+  "feature": "minecraft:patch_taiga_grass",
+  "placement": [
+    {
+      "type": "biome"
+    },
+    {
+      "type": "in_square"
+    },
+    {
+      "type": "heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "environment_scan",
+      "direction_of_search": "down",
+      "max_steps": 1,
+      "target_condition": {
+        "type": "would_survive",
+        "state": {
+          "Name": "minecraft:fern",
+          "properties": {}
+        }
+      }
+    },
+    {
+      "type": "rarity_filter",
+      "chance": 5
+    }
+  ]
+}

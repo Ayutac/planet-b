@@ -25,12 +25,9 @@
       "org.abos.fabricmc.planetb.datagen.PlanetBDataGeneratorEntry"
     ]
   },
-  "mixins": [
-    "planet-b.mixins.json"
-  ],
 
   "depends": {
-    "fabricloader": ">=0.13.3",
+    "fabricloader": ">=0.14.0",
     "fabric": "*",
     "minecraft": ">=1.18.2",
     "java": ">=17"

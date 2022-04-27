@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "planet-b:block/mercury_rock" }
+    "": { "model": "planet-b:block/mercury_rock_glowing" }
   }
 }

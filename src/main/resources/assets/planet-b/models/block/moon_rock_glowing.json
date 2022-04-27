@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "planet-b:block/moon_rock_glowing"
+  }
+}

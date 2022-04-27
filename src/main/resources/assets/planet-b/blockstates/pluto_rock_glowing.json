@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "planet-b:block/pluto_rock" }
+    "": { "model": "planet-b:block/pluto_rock_glowing" }
   }
 }

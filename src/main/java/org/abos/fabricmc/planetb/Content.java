@@ -187,7 +187,6 @@ public class Content {
         if (ITEM_GROUP != null)
             return ITEM_GROUP;
         List<ItemStack> itemList = new LinkedList<>();
-        itemList.add(new ItemStack(PORTAL_FRAME_ITEM));
         Dust.createRock2DustMap().forEach((rock,dust) -> {
             itemList.add(new ItemStack(rock));
             itemList.add(new ItemStack(rock.asGlowingItem()));
@@ -196,6 +195,7 @@ public class Content {
             itemList.add(new ItemStack(rock.getWall()));
             itemList.add(new ItemStack(dust));
         });
+        itemList.add(new ItemStack(PORTAL_FRAME_ITEM));
         ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(PlanetB.MOD_ID,PlanetB.MOD_ID))
                 .icon(() -> new ItemStack(Dust.MOON))
                 .appendItems(list -> list.addAll(itemList))

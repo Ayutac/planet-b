@@ -1,9 +1,9 @@
 {
   "precipitation": "rain",
   "category": "none",
-  "temperature": 0.3,
+  "temperature": 0.4,
   "temperature_modifier": "none",
-  "downfall": 0.2,
+  "downfall": 0.5,
   "creature_spawn_probability": 0,
   "effects": {
     "sky_color": 3357900,
@@ -27,7 +27,7 @@
     [],
     [],
     [],
-    ["minecraft:pine"],
+    ["planet-b:pine_patch", "planet-b:sole_rubber_tree","planet-b:taiga_grass_patch", "planet-b:sole_wither_rose"],
     []
   ]
 }

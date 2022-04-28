@@ -10,7 +10,7 @@
       "translate": "advancements.planet-b.portal_frame.desc"
     }
   },
-  "parent": "techreborn:advancedmachineblock",
+  "parent": "techreborn:blastfurnace",
   "criteria": {
     "crit1": {
       "trigger": "minecraft:inventory_changed",

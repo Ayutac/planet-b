@@ -4,7 +4,6 @@ import net.fabricmc.api.ModInitializer;
 import org.abos.fabricmc.planetb.world.biome.PlanetBBiomes;
 import org.abos.fabricmc.planetb.world.dimension.PlanetBDimension;
 import org.abos.fabricmc.planetb.world.gen.feature.OreFeatures;
-import org.abos.fabricmc.planetb.world.gen.feature.PlanetFeatures;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +19,6 @@ public class PlanetB implements ModInitializer {
 
 		Content.init();
 		OreFeatures.init();
-		PlanetFeatures.init();
 		PlanetBBiomes.init();
 		PlanetBDimension.init();
 

@@ -17,9 +17,10 @@ public class PlanetBBiomes {
 
     public static final RegistryKey<Biome> PLAINS_KEY = registerKey("plains");
     public static final RegistryKey<Biome> FOREST_KEY = registerKey("forest");
+    public static final RegistryKey<Biome> MUSHROOM_FOREST_KEY = registerKey("mushroom_forest");
 
     public static final Predicate<BiomeSelectionContext> SELECT_PLANET_B_BIOMES = BiomeSelectors.includeByKey(
-            PLAINS_KEY, FOREST_KEY);
+            PLAINS_KEY, FOREST_KEY, MUSHROOM_FOREST_KEY);
 
     private static RegistryKey<Biome> registerKey(String name){
         return RegistryKey.of(Registry.BIOME_KEY, new Identifier(PlanetB.MOD_ID, name));

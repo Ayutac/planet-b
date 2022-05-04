@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:bastion_remnant",
+  "config": {
+    "start_pool": "planet-b:lake",
+    "size": 1
+  },
+  "biomes": ["planet-b:plains", "planet-b:forest", "planet-b:mushroom_forest"],
+  "adapt_noise": true,
+  "spawn_overrides": {}
+}

@@ -19,7 +19,7 @@ public class LakeFeatures {
     public static final StructureGeneratorFactory<StructurePoolFeatureConfig> LAKE_GENERATOR_FACTORY = context -> {
         ChunkRandom chunkRandom = new ChunkRandom(new AtomicSimpleRandom(0L));
         chunkRandom.setCarverSeed(context.seed(), context.chunkPos().x, context.chunkPos().z);
-        BlockPos blockPos = new BlockPos(context.chunkPos().getStartX(), -Math.min(chunkRandom.nextInt(60), 5), context.chunkPos().getStartZ());
+        BlockPos blockPos = new BlockPos(context.chunkPos().getStartX(), Math.min(chunkRandom.nextInt(60), 5), context.chunkPos().getStartZ());
         return StructurePoolBasedGenerator.generate(context, PoolStructurePiece::new, blockPos, true, true);
     };
 

@@ -51,6 +51,8 @@
   "itemGroup.planet-b.planet-b": "Planet B",
 
   "biome.planet-b.plains": "Plains (Planet B)",
+  "biome.planet-b.forest": "Forest (Planet B)",
+  "biome.planet-b.mushroom_forest": "Mushroom Forest (Planet B)",
 
   "advancements.planet-b.portal_frame": "Portal away!",
   "advancements.planet-b.portal_frame.desc": "Obtain a portal frame for Planet B",

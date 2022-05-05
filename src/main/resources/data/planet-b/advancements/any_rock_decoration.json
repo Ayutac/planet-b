@@ -12,14 +12,12 @@
   },
   "parent": "planet-b:any_rock",
   "criteria": {
-    "has_sapling": {
+    "requirement": {
       "trigger": "minecraft:placed_block",
       "conditions": {
-        "items": [
-          {
-            "tag": "planet-b:rock_decorations"
-          }
-        ]
+        "item": {
+          "tag": "planet-b:rock_decorations"
+        }
       }
     }
   }

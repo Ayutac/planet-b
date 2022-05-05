@@ -12,7 +12,7 @@
   },
   "parent": "planet-b:portal_frame",
   "criteria": {
-    "has_sapling": {
+    "requirement": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

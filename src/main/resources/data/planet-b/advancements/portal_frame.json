@@ -12,7 +12,7 @@
   },
   "parent": "techreborn:blastfurnace",
   "criteria": {
-    "crit1": {
+    "requirement": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

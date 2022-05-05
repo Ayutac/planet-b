@@ -6,6 +6,7 @@ import net.minecraft.structure.pool.StructurePoolBasedGenerator;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
@@ -29,6 +30,7 @@ public class PlanetFeatures {
 
     public static void init() {
         Registry.register(Registry.STRUCTURE_FEATURE, new Identifier(PlanetB.MOD_ID, "mars"), MARS_STRUCT);
+        StructureFeature.STRUCTURE_TO_GENERATION_STEP.put(MARS_STRUCT, GenerationStep.Feature.SURFACE_STRUCTURES);
     }
 
     private PlanetFeatures() {/* No instantiation. */}

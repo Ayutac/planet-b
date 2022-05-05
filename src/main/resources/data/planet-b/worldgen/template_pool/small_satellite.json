@@ -1,12 +1,12 @@
 {
-  "name": "planet_b:planet",
+  "name": "planet_b:small_satellite",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "planet-b:pluto_offset",
+        "location": "planet-b:pluto",
         "projection": "rigid",
         "processors": "minecraft:empty"
       }
@@ -15,7 +15,7 @@
       "weight": 10,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "planet-b:mercury_offset",
+        "location": "planet-b:mercury",
         "projection": "rigid",
         "processors": "minecraft:empty"
       }
@@ -24,7 +24,7 @@
       "weight": 49,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "planet-b:moon_offset",
+        "location": "planet-b:moon",
         "projection": "rigid",
         "processors": "minecraft:empty"
       }
@@ -33,7 +33,7 @@
       "weight": 30,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "planet-b:mars_offset",
+        "location": "planet-b:mars",
         "projection": "rigid",
         "processors": "minecraft:empty"
       }
@@ -42,7 +42,7 @@
       "weight": 10,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "planet-b:venus_offset",
+        "location": "planet-b:venus",
         "projection": "rigid",
         "processors": "minecraft:empty"
       }

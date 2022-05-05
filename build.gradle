@@ -55,6 +55,8 @@ sourceSets {
 }
 
 loom {
+	accessWidenerPath = file("src/main/resources/planet-b.accesswidener")
+
 	runs {
 		datagen {
 			server()

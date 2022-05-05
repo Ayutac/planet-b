@@ -1,10 +1,10 @@
 {
-  "type": "minecraft:village",
+  "type": "planet-b:small_satellite",
   "config": {
-    "start_pool": "planet-b:planet",
+    "start_pool": "planet-b:small_satellite",
     "size": 1
   },
   "biomes": ["planet-b:plains", "planet-b:forest", "planet-b:mushroom_forest"],
-  "adapt_noise": true,
+  "adapt_noise": false,
   "spawn_overrides": {}
 }

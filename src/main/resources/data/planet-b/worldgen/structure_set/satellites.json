@@ -1,7 +1,7 @@
 {
   "structures": [
     {
-      "structure": "planet-b:planet",
+      "structure": "planet-b:satellite",
       "weight": 1
     }
   ],

@@ -3,6 +3,7 @@ package org.abos.fabricmc.planetb;
 import net.fabricmc.api.ModInitializer;
 import org.abos.fabricmc.planetb.world.biome.PlanetBBiomes;
 import org.abos.fabricmc.planetb.world.dimension.PlanetBDimension;
+import org.abos.fabricmc.planetb.world.gen.feature.LakeFeatures;
 import org.abos.fabricmc.planetb.world.gen.feature.OreFeatures;
 import org.abos.fabricmc.planetb.world.gen.feature.SatelliteFeatures;
 import org.slf4j.Logger;
@@ -19,6 +20,7 @@ public class PlanetB implements ModInitializer {
 		LOGGER.info("Initializing " + MOD_ID + "...");
 
 		Content.init();
+		LakeFeatures.init();
 		OreFeatures.init();
 		SatelliteFeatures.init();
 		PlanetBBiomes.init();

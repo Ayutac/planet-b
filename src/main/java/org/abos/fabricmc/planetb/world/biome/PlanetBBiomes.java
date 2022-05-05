@@ -30,7 +30,6 @@ public class PlanetBBiomes {
 
     public static void loadBiomes() {
         BiomeModifications.create(new Identifier(PlanetB.MOD_ID, "features"))
-                .add(ModificationPhase.ADDITIONS, BiomeSelectors.tag(ALL), planetModifier())
                 .add(ModificationPhase.ADDITIONS, BiomeSelectors.tag(ALL), oreModifier());
     }
 
@@ -46,14 +45,6 @@ public class PlanetBBiomes {
                     BuiltinRegistries.PLACED_FEATURE.getKey(OreFeatures.PACKED_ICE_PLACE_LOWER).orElseThrow());
             for (OreFeatures.Ore ore : OreFeatures.Ore.values()) {
                 biomeModificationContext.getGenerationSettings().addFeature(GenerationStep.Feature.UNDERGROUND_ORES, ore.getPlacedFeatureRegistryKey());
-            }
-        };
-    }
-
-    private static BiConsumer<BiomeSelectionContext, BiomeModificationContext> planetModifier() {
-        return (biomeSelectionContext, biomeModificationContext) -> {
-            biomeModificationContext.getGenerationSettings().addFeature(GenerationStep.Feature.SURFACE_STRUCTURES,
-                    BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE.getKey().orElseThrow());
             }
         };
     }

@@ -8,13 +8,10 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.feature.StructurePoolFeatureConfig;
 import org.abos.fabricmc.planetb.PlanetB;
 import org.abos.fabricmc.planetb.world.gen.feature.OreFeatures;
-import org.abos.fabricmc.planetb.world.gen.feature.PlanetFeatures;
 
 import java.util.function.BiConsumer;
-import java.util.function.Predicate;
 
 public class PlanetBBiomes {
 

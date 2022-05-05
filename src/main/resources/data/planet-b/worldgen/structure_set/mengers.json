@@ -1,7 +1,15 @@
 {
   "structures": [
     {
-      "structure": "planet-b:menger",
+      "structure": "planet-b:menger_small",
+      "weight": 89
+    },
+    {
+      "structure": "planet-b:menger_medium",
+      "weight": 10
+    },
+    {
+      "structure": "planet-b:menger_large",
       "weight": 1
     }
   ],

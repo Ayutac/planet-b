@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:village",
+  "config": {
+    "start_pool": "planet-b:menger_small",
+    "size": 1
+  },
+  "biomes": ["planet-b:plains", "planet-b:mushroom_forest"],
+  "adapt_noise": true,
+  "spawn_overrides": {}
+}

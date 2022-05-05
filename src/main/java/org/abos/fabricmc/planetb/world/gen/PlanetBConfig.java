@@ -23,7 +23,7 @@ public class PlanetBConfig extends StructurePoolFeatureConfig {
                                     StructurePool.REGISTRY_CODEC.fieldOf("start_pool").forGetter(PlanetBConfig::getStartPool),
                                     RegistryKey.createCodec(Registry.STRUCTURE_SET_KEY).listOf().fieldOf("structure_set_to_avoid").orElse(new ArrayList<>(20)).forGetter(config -> config.structureSetToAvoid),
                                     Codec.intRange(0, 7).fieldOf("size").forGetter(PlanetBConfig::getSize),
-                                    Codec.intRange(-60,250).fieldOf("heightRange").orElse(-1).forGetter(config -> config.heightRange)
+                                    Codec.intRange(-1,250).fieldOf("heightRange").orElse(-1).forGetter(config -> config.heightRange)
                             )
                             .apply(instance, PlanetBConfig::new)
     );

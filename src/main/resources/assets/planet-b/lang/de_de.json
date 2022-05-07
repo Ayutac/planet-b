@@ -2,6 +2,9 @@
   "block.planet-b.portal_frame": "Verstärktes Maschinengerüst",
   "item.planet-b.portal_frame": "Verstärktes Maschinengerüst",
 
+  "item.planet-b.galaxy_dust": "Galaxiestaub",
+  "item.planet-b.galaxy_gem": "Galaxiejuwel",
+
   "block.planet-b.jupiter_rock": "Jupitergestein",
   "item.planet-b.jupiter_rock": "Jupitergestein",
   "block.planet-b.jupiter_rock_glowing": "Funkelndes Jupitergestein",

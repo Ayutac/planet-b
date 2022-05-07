@@ -180,6 +180,9 @@ public class Content {
         }
     }
 
+    public static final String GALAXY_GEM_STR = "galaxy_gem";
+    public static final Item GALAXY_GEM = Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, GALAXY_GEM_STR), new Item(new FabricItemSettings().group(ItemGroup.MISC)));
+
     public static void init() {
         PlanetB.LOGGER.info("Initializing items...");
         initBlocks();
@@ -202,6 +205,8 @@ public class Content {
             itemList.add(new ItemStack(rock.getWall()));
             itemList.add(new ItemStack(dust));
         });
+        itemList.add(new ItemStack(Dust.GALAXY));
+        itemList.add(new ItemStack(GALAXY_GEM));
         itemList.add(new ItemStack(PORTAL_FRAME_ITEM));
         ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(PlanetB.MOD_ID,PlanetB.MOD_ID))
                 .icon(() -> new ItemStack(Dust.MOON))

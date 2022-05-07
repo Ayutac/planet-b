@@ -126,6 +126,7 @@ public class Content {
     public static final TagKey<Item> DUSTS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "dusts"));
 
     public enum Dust implements ItemConvertible, TagConvertible<Item> {
+        GALAXY,
         JUPITER,
         MARS,
         MERCURY,
@@ -167,11 +168,20 @@ public class Content {
         public static Map<Rock, Dust> createRock2DustMap() {
             var builder = new ImmutableMap.Builder<Rock, Dust>();
             for (Dust dust : Dust.values()) {
-                builder.put(Rock.valueOf(dust.name()), dust);
+                try {
+                    builder.put(Rock.valueOf(dust.name()), dust);
+                }
+                catch (IllegalArgumentException ex) {
+                    // TODO add logger and log if dev
+                }
+
             }
             return builder.build();
         }
     }
+
+    public static final String GALAXY_GEM_STR = "galaxy_gem";
+    public static final Item GALAXY_GEM = Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, GALAXY_GEM_STR), new Item(new FabricItemSettings().group(ItemGroup.MISC)));
 
     public static void init() {
         PlanetB.LOGGER.info("Initializing items...");
@@ -195,6 +205,8 @@ public class Content {
             itemList.add(new ItemStack(rock.getWall()));
             itemList.add(new ItemStack(dust));
         });
+        itemList.add(new ItemStack(Dust.GALAXY));
+        itemList.add(new ItemStack(GALAXY_GEM));
         itemList.add(new ItemStack(PORTAL_FRAME_ITEM));
         ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(PlanetB.MOD_ID,PlanetB.MOD_ID))
                 .icon(() -> new ItemStack(Dust.MOON))

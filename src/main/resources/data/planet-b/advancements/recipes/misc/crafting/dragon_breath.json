@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:crafting/dragon_breath"
+    ]
+  },
+  "criteria": {
+    "has_dragon_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:dragon_head"]
+          }
+        ]
+      }
+    },
+    "has_galaxy_dust": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:galaxy_dusts"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:crafting/dragon_breath"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dragon_head",
+      "has_galaxy_dust",
+      "has_the_recipe"
+    ]
+  ]
+}

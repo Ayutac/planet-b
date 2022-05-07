@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "planet-b:galaxy_gem"
+    },
+    "title": {
+      "translate": "advancements.planet-b.galaxy_gem"
+    },
+    "description": {
+      "translate": "advancements.planet-b.galaxy_gem.desc"
+    },
+    "frame": "goal"
+  },
+  "parent": "planet-b:any_rock",
+  "criteria": {
+    "jupiter_rock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:galaxy_gems"
+          }
+        ]
+      }
+    }
+  }
+}

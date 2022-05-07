@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:crafting/jupiter_dust"
+    ]
+  },
+  "criteria": {
+    "has_jupiter_dust": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:jupiter_dusts"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:crafting/jupiter_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_jupiter_dust",
+      "has_the_recipe"
+    ]
+  ]
+}

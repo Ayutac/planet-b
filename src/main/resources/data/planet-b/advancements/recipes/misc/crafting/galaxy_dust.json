@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:crafting/galaxy_dust"
+    ]
+  },
+  "criteria": {
+    "has_any_dust": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "planet-b:dusts"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:crafting/galaxy_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_any_dust",
+      "has_the_recipe"
+    ]
+  ]
+}

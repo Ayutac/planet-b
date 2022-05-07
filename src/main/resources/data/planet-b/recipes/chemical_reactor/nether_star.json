@@ -1,0 +1,20 @@
+{
+	"type": "techreborn:chemical_reactor",
+	"power": 30,
+	"time": 500,
+	"ingredients": [
+		{
+			"tag": "c:galaxy_gems",
+			"count": 5
+		},
+		{
+			"item": "minecraft:wither_skeleton_skull",
+			"count": 3
+		}
+	],
+	"results": [
+		{
+			"item": "minecraft:nether_star"
+		}
+	]
+}

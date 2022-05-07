@@ -1,0 +1,18 @@
+{
+	"type": "techreborn:chemical_reactor",
+	"power": 30,
+	"time": 500,
+	"ingredients": [
+		{
+			"tag": "c:galaxy_gems"
+		},
+		{
+			"tag": "c:sapphire_dusts"
+		}
+	],
+	"results": [
+		{
+			"item": "techreborn:sapphire_gem"
+		}
+	]
+}

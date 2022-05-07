@@ -1,0 +1,20 @@
+{
+	"type": "techreborn:assembling_machine",
+	"power": 30,
+	"time": 800,
+	"ingredients": [
+		{
+			"tag": "c:galaxy_gems",
+			"count": 6
+		},
+		{
+			"item": "minecraft:prismarine_shard",
+			"count": 15
+		}
+	],
+	"results": [
+		{
+			"item": "minecraft:trident"
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:crafting/venus_dust"
+    ]
+  },
+  "criteria": {
+    "has_venus_dust": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:venus_dusts"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:crafting/venus_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_venus_dust",
+      "has_the_recipe"
+    ]
+  ]
+}

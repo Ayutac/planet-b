@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:galaxy_dusts"
+    },
+    {
+      "item": "minecraft:dragon_head"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "item": "minecraft:dragon_breath",
+    "count": 3
+  }
+}

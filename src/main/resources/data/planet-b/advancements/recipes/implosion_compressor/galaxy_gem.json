@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+	"recipes": [
+	  "planet-b:implosion_compressor/galaxy_gem"
+	]
+  },
+  "criteria": {
+	"has_galaxy_dust": {
+	  "trigger": "minecraft:inventory_changed",
+	  "conditions": {
+		"items": [
+		  {
+			"tag": "c:galaxy_dusts"
+		  }
+		]
+	  }
+	},
+	"has_the_recipe": {
+	  "trigger": "minecraft:recipe_unlocked",
+	  "conditions": {
+		"recipe": "planet-b:implosion_compressor/galaxy_gem"
+	  }
+	}
+  },
+  "requirements": [
+	[
+	  "has_galaxy_dust",
+	  "has_the_recipe"
+	]
+  ]
+}

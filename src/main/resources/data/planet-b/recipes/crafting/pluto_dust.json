@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:pluto_dusts"
+    },
+    {
+      "tag": "c:galaxy_dusts"
+    },
+    {
+      "item": "techreborn:uu_matter"
+    }
+  ],
+  "result": {
+    "item": "planet-b:pluto_dust",
+    "count": 2
+  }
+}

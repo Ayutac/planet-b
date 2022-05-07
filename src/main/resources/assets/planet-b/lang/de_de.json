@@ -120,5 +120,7 @@
   "advancements.planet-b.any_rock_glowing": "Und es wurde Licht",
   "advancements.planet-b.any_rock_glowing.desc": "Erhalte irgendein funkelndes Weltraumgestein",
   "advancements.planet-b.all_rocks": "Steinsammler",
-  "advancements.planet-b.all_rocks.desc": "Sammle alle verschiedenen Weltraumgesteine"
+  "advancements.planet-b.all_rocks.desc": "Sammle alle verschiedenen Weltraumgesteine",
+  "advancements.planet-b.galaxy_gem": "Mein Schatz!",
+  "advancements.planet-b.galaxy_gem.desc": "Erhalte ein Galaxiejuwel"
 }

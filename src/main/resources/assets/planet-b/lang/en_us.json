@@ -120,5 +120,7 @@
   "advancements.planet-b.any_rock_glowing": "And there was light",
   "advancements.planet-b.any_rock_glowing.desc": "Obtain any glowing space rock",
   "advancements.planet-b.all_rocks": "Rock Collector",
-  "advancements.planet-b.all_rocks.desc": "Collect all kinds of space rocks"
+  "advancements.planet-b.all_rocks.desc": "Collect all kinds of space rocks",
+  "advancements.planet-b.galaxy_gem": "My Precious!",
+  "advancements.planet-b.galaxy_gem.desc": "Obtain a galaxy gem"
 }

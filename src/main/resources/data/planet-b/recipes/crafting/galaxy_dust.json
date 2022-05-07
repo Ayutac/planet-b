@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:jupiter_dusts"
+    },
+    {
+      "tag": "c:mars_dusts"
+    },
+    {
+      "tag": "c:mercury_dusts"
+    },
+    {
+      "tag": "c:moon_dusts"
+    },
+    {
+      "tag": "c:neptune_dusts"
+    },
+    {
+      "tag": "c:pluto_dusts"
+    },
+    {
+      "tag": "c:saturn_dusts"
+    },
+    {
+      "tag": "c:uranus_dusts"
+    },
+    {
+      "tag": "c:venus_dusts"
+    }
+  ],
+  "result": {
+    "item": "planet-b:galaxy_dust"
+  }
+}

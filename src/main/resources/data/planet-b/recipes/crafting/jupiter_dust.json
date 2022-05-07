@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:jupiter_dusts"
+    },
+    {
+      "tag": "c:galaxy_dusts"
+    },
+    {
+      "item": "techreborn:uu_matter"
+    }
+  ],
+  "result": {
+    "item": "planet-b:jupiter_dust",
+    "count": 2
+  }
+}

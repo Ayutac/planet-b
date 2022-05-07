@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "planet-b:crafting/neptune_dust"
+    ]
+  },
+  "criteria": {
+    "has_neptune_dust": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:neptune_dusts"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "planet-b:crafting/neptune_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_neptune_dust",
+      "has_the_recipe"
+    ]
+  ]
+}

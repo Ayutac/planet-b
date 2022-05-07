@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+	"recipes": [
+	  "planet-b:assembly_machine/trident"
+	]
+  },
+  "criteria": {
+	"has_galaxy_gem": {
+	  "trigger": "minecraft:inventory_changed",
+	  "conditions": {
+		"items": [
+		  {
+			"tag": "c:galaxy_gems"
+		  }
+		]
+	  }
+	},
+	"has_the_recipe": {
+	  "trigger": "minecraft:recipe_unlocked",
+	  "conditions": {
+		"recipe": "planet-b:assembly_machine/trident"
+	  }
+	}
+  },
+  "requirements": [
+	[
+	  "has_galaxy_gem",
+	  "has_the_recipe"
+	]
+  ]
+}

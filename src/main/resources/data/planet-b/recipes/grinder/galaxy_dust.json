@@ -1,0 +1,17 @@
+{
+  "type": "techreborn:grinder",
+  "power": 2,
+  "time": 200,
+
+  "ingredients" : [
+    {
+      "tag": "c:galaxy_gems"
+    }
+  ],
+
+  "results" : [
+    {
+      "item": "planet-b:galaxy_dust"
+    }
+  ]
+}

@@ -3,16 +3,16 @@ package org.abos.fabricmc.planetb.datagen.providers;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.advancement.criterion.CriterionConditions;
-import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.SingleItemRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Identifier;
 import org.abos.fabricmc.planetb.Content;
 import org.abos.fabricmc.planetb.PlanetB;
+import techreborn.init.TRContent;
 
+import java.util.Locale;
 import java.util.function.Consumer;
 
 public class RecipeProvider extends FabricRecipeProvider {
@@ -25,6 +25,7 @@ public class RecipeProvider extends FabricRecipeProvider {
     protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
         generateDecorative(exporter);
         generateSmelting(exporter);
+        generateDustDuplication(exporter);
     }
 
     protected void generateDecorative(Consumer<RecipeJsonProvider> exporter) {
@@ -67,4 +68,33 @@ public class RecipeProvider extends FabricRecipeProvider {
         }
     }
 
+    protected void generateDustDuplication(Consumer<RecipeJsonProvider> exporter) {
+        for (Content.Dust dust : Content.Dust.values()) {
+            if (dust != Content.Dust.GALAXY) {
+                ShapelessRecipeJsonBuilder.create(dust, 2)
+                        .input(dust.asTag()).input(Content.Dust.GALAXY.asTag()).input(TRContent.Parts.UU_MATTER)
+                        .criterion(hasItem(dust), conditionsFromTag(dust.asTag()))
+                        .offerTo(exporter, new Identifier(PlanetB.MOD_ID, "crafting/" + dust.getName() + "_dust"));
+            }
+        }
+        for (TRContent.Dusts dust : TRContent.Dusts.values()) {
+            ShapelessRecipeJsonBuilder.create(dust, 2)
+                    .input(dust.asTag()).input(Content.Dust.GALAXY.asTag()).input(TRContent.Parts.UU_MATTER)
+                    .criterion(hasItem(dust), conditionsFromTag(dust.asTag()))
+                    .offerTo(exporter, new Identifier(PlanetB.MOD_ID, "crafting/" + dust.name().toLowerCase(Locale.ROOT) + "_dust"));
+        }
+        // vanilla dusts
+        ShapelessRecipeJsonBuilder.create(Items.REDSTONE, 2)
+                .input(Items.REDSTONE).input(Content.Dust.GALAXY.asTag()).input(TRContent.Parts.UU_MATTER)
+                .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
+                .offerTo(exporter, new Identifier(PlanetB.MOD_ID, "crafting/redstone"));
+        ShapelessRecipeJsonBuilder.create(Items.GLOWSTONE_DUST, 2)
+                .input(Items.GLOWSTONE_DUST).input(Content.Dust.GALAXY.asTag()).input(TRContent.Parts.UU_MATTER)
+                .criterion(hasItem(Items.GLOWSTONE_DUST), conditionsFromItem(Items.GLOWSTONE_DUST))
+                .offerTo(exporter, new Identifier(PlanetB.MOD_ID, "crafting/glowstone_dust"));
+        ShapelessRecipeJsonBuilder.create(Items.GUNPOWDER, 2)
+                .input(Items.GUNPOWDER).input(Content.Dust.GALAXY.asTag()).input(TRContent.Parts.UU_MATTER)
+                .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
+                .offerTo(exporter, new Identifier(PlanetB.MOD_ID, "crafting/gunpowder"));
+    }
 }

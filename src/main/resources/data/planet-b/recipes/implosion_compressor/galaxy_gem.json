@@ -1,0 +1,25 @@
+{
+  "type": "techreborn:implosion_compressor",
+  "power": 30,
+  "time": 2000,
+  "ingredients" : [
+	{
+	  "tag": "c:galaxy_dusts",
+	  "count": 4
+	},
+    {
+      "item": "minecraft:tnt",
+      "count": 16
+    }
+  ],
+  "results" : [
+    {
+      "item": "planet-b:galaxy_gem",
+      "count": 3
+    },
+    {
+      "item": "techreborn:dark_ashes_dust",
+      "count": 12
+    }
+  ]
+}

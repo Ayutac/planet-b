@@ -27,7 +27,7 @@ public class SatelliteFeatures {
     public static StructureFeature<PlanetBConfig> SMALL_SATELLITE = new StructureFeature(PlanetBConfig.CODEC, SMALL_SATELLITE_GENERATOR_FACTORY);
 
     public static void init() {
-        Registry.register(Registry.STRUCTURE_FEATURE, new Identifier(PlanetB.MOD_ID, "small_satellite"), SMALL_SATELLITE);
+        Registry.register(Registry.STRUCTURE_FEATURE, PlanetB.id("small_satellite"), SMALL_SATELLITE);
         StructureFeature.STRUCTURE_TO_GENERATION_STEP.put(SMALL_SATELLITE, GenerationStep.Feature.SURFACE_STRUCTURES);
     }
 

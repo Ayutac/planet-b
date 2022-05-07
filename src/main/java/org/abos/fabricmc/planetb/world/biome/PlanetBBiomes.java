@@ -19,14 +19,14 @@ public class PlanetBBiomes {
     public static final RegistryKey<Biome> FOREST_KEY = registerKey("forest");
     public static final RegistryKey<Biome> MUSHROOM_FOREST_KEY = registerKey("mushroom_forest");
 
-    public static final TagKey<Biome> ALL = TagKey.of(Registry.BIOME_KEY, new Identifier(PlanetB.MOD_ID, "all_biomes"));
+    public static final TagKey<Biome> ALL = TagKey.of(Registry.BIOME_KEY, PlanetB.id("all_biomes"));
 
     private static RegistryKey<Biome> registerKey(String name){
-        return RegistryKey.of(Registry.BIOME_KEY, new Identifier(PlanetB.MOD_ID, name));
+        return RegistryKey.of(Registry.BIOME_KEY, PlanetB.id(name));
     }
 
     public static void loadBiomes() {
-        BiomeModifications.create(new Identifier(PlanetB.MOD_ID, "features"))
+        BiomeModifications.create(PlanetB.id("features"))
                 .add(ModificationPhase.ADDITIONS, BiomeSelectors.tag(ALL), oreModifier());
     }
 

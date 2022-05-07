@@ -26,22 +26,22 @@ public class Content {
 
     private static ItemGroup ITEM_GROUP = null;
 
-    public static final TagKey<Item> MUNDANE_ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "mundane_rocks"));
-    public static final TagKey<Item> GLOWING_ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "glowing_rocks"));
-    public static final TagKey<Item> ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rocks"));
-    public static final TagKey<Item> ROCK_SLABS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rock_slabs"));
-    public static final TagKey<Item> ROCK_STAIRS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rock_stairs"));
-    public static final TagKey<Item> ROCK_WALLS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rock_walls"));
-    public static final TagKey<Item> ROCK_DECORATIONS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "rock_decorations"));
+    public static final TagKey<Item> MUNDANE_ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, PlanetB.id("mundane_rocks"));
+    public static final TagKey<Item> GLOWING_ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, PlanetB.id("glowing_rocks"));
+    public static final TagKey<Item> ROCKS_TAG = TagKey.of(Registry.ITEM_KEY, PlanetB.id("rocks"));
+    public static final TagKey<Item> ROCK_SLABS_TAG = TagKey.of(Registry.ITEM_KEY, PlanetB.id("rock_slabs"));
+    public static final TagKey<Item> ROCK_STAIRS_TAG = TagKey.of(Registry.ITEM_KEY, PlanetB.id("rock_stairs"));
+    public static final TagKey<Item> ROCK_WALLS_TAG = TagKey.of(Registry.ITEM_KEY, PlanetB.id("rock_walls"));
+    public static final TagKey<Item> ROCK_DECORATIONS_TAG = TagKey.of(Registry.ITEM_KEY, PlanetB.id("rock_decorations"));
 
     public static AbstractBlock.Settings createRockSettings(MapColor color) {
         return FabricBlockSettings.of(Material.STONE, color).requiresTool().strength(1.5f, 6f);
     }
 
     public static BlockItem registerBlock(String name, Block block) {
-        Registry.register(Registry.BLOCK, new Identifier(PlanetB.MOD_ID, name), block);
+        Registry.register(Registry.BLOCK, PlanetB.id(name), block);
         BlockItem item = new BlockItem(block, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
-        Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name), item);
+        Registry.register(Registry.ITEM, PlanetB.id(name), item);
         return item;
     }
 
@@ -123,7 +123,7 @@ public class Content {
         }
     }
 
-    public static final TagKey<Item> DUSTS_TAG = TagKey.of(Registry.ITEM_KEY, new Identifier(PlanetB.MOD_ID, "dusts"));
+    public static final TagKey<Item> DUSTS_TAG = TagKey.of(Registry.ITEM_KEY, PlanetB.id("dusts"));
 
     public enum Dust implements ItemConvertible, TagConvertible<Item> {
         GALAXY,
@@ -144,7 +144,7 @@ public class Content {
         Dust() {
             name = name().toLowerCase(Locale.ROOT);
             item = new Item(new FabricItemSettings().group(ItemGroup.MISC));
-            Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, name + "_dust"), item);
+            Registry.register(Registry.ITEM, PlanetB.id(name + "_dust"), item);
             tag = TagKey.of(Registry.ITEM_KEY, new Identifier("c", name + "_dusts"));
         }
 
@@ -181,7 +181,7 @@ public class Content {
     }
 
     public static final String GALAXY_GEM_STR = "galaxy_gem";
-    public static final Item GALAXY_GEM = Registry.register(Registry.ITEM, new Identifier(PlanetB.MOD_ID, GALAXY_GEM_STR), new Item(new FabricItemSettings().group(ItemGroup.MISC)));
+    public static final Item GALAXY_GEM = Registry.register(Registry.ITEM, PlanetB.id(GALAXY_GEM_STR), new Item(new FabricItemSettings().group(ItemGroup.MISC)));
 
     public static void init() {
         PlanetB.LOGGER.info("Initializing items...");

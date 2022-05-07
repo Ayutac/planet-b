@@ -13,7 +13,7 @@ import techreborn.init.TRContent;
 
 public class PlanetBDimension {
 
-    public static final Identifier DIMENSION_ID = new Identifier(PlanetB.MOD_ID, PlanetB.MOD_ID);
+    public static final Identifier DIMENSION_ID = PlanetB.id(PlanetB.MOD_ID);
 
     public static final RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(Registry.DIMENSION_KEY, DIMENSION_ID);
 
@@ -24,7 +24,7 @@ public class PlanetBDimension {
 
     public static final RegistryKey<DimensionType> DIMENSION_TYPE_KEY = RegistryKey.of(
             Registry.DIMENSION_TYPE_KEY,
-            new Identifier(PlanetB.MOD_ID, PlanetB.MOD_ID + "_type")
+            PlanetB.id(PlanetB.MOD_ID + "_type")
     );
 
     public static void init() {

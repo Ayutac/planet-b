@@ -91,9 +91,9 @@ public class OreFeatures {
                     OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, defaultBlockState)),
                     size
             ));
-            Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(PlanetB.MOD_ID, fullName), configuredFeature);
+            Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, PlanetB.id(fullName), configuredFeature);
             placedFeature = new PlacedFeature(RegistryEntry.of(configuredFeature), createOrePlacementModifiers(this));
-            Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, fullName), placedFeature);
+            Registry.register(BuiltinRegistries.PLACED_FEATURE, PlanetB.id(fullName), placedFeature);
         }
 
         public int getVeinsPerChunk() {
@@ -109,12 +109,12 @@ public class OreFeatures {
     public static void init() {
         //noinspection ResultOfMethodCallIgnored
         Ore.values(); // force loading
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(PlanetB.MOD_ID, ANCIENT_DEBRIS_STR), ANCIENT_DEBRIS_CONF);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, ANCIENT_DEBRIS_STR), ANCIENT_DEBRIS_PLACE);
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(PlanetB.MOD_ID, PACKED_ICE_STR), PACKED_ICE_CONF);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, PACKED_ICE_STR + "upper"), PACKED_ICE_PLACE_UPPER);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, PACKED_ICE_STR + "belt"), PACKED_ICE_PLACE_BELT);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(PlanetB.MOD_ID, PACKED_ICE_STR + "lower"), PACKED_ICE_PLACE_LOWER);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, PlanetB.id(ANCIENT_DEBRIS_STR), ANCIENT_DEBRIS_CONF);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, PlanetB.id(ANCIENT_DEBRIS_STR), ANCIENT_DEBRIS_PLACE);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, PlanetB.id(PACKED_ICE_STR), PACKED_ICE_CONF);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, PlanetB.id(PACKED_ICE_STR + "upper"), PACKED_ICE_PLACE_UPPER);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, PlanetB.id(PACKED_ICE_STR + "belt"), PACKED_ICE_PLACE_BELT);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, PlanetB.id(PACKED_ICE_STR + "lower"), PACKED_ICE_PLACE_LOWER);
     }
 
     private OreFeatures() {/* No instantiation. */}

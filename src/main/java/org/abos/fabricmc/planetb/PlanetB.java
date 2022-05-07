@@ -1,6 +1,7 @@
 package org.abos.fabricmc.planetb;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.Identifier;
 import org.abos.fabricmc.planetb.world.biome.PlanetBBiomes;
 import org.abos.fabricmc.planetb.world.dimension.PlanetBDimension;
 import org.abos.fabricmc.planetb.world.gen.feature.LakeFeatures;
@@ -29,6 +30,10 @@ public class PlanetB implements ModInitializer {
 		PlanetBBiomes.loadBiomes();
 
 		LOGGER.info("Initializing of " + MOD_ID + " done!");
+	}
+
+	public static Identifier id(String name) {
+		return new Identifier(MOD_ID, name);
 	}
 
 }

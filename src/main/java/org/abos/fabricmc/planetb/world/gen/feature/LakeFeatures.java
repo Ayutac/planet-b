@@ -27,7 +27,7 @@ public class LakeFeatures {
     public static StructureFeature<PlanetBConfig> LAKE = new StructureFeature(PlanetBConfig.CODEC, LAKE_GENERATOR_FACTORY);
 
     public static void init() {
-        Registry.register(Registry.STRUCTURE_FEATURE, new Identifier(PlanetB.MOD_ID, "lake"), LAKE);
+        Registry.register(Registry.STRUCTURE_FEATURE, PlanetB.id("lake"), LAKE);
         StructureFeature.STRUCTURE_TO_GENERATION_STEP.put(LAKE, GenerationStep.Feature.UNDERGROUND_DECORATION);
     }
 
